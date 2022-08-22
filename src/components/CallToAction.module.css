@@ -1,0 +1,73 @@
+.call {
+    width: 100%;
+    height: 45vh;
+    background: url('../img/banner/b2.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 2rem 0.5rem;
+}
+
+.call__title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.call__desc {
+    font-size: 3rem;
+    margin-top: 1.5rem;
+    color: #fff;
+}
+
+.call__off {
+    color: rgb(187, 4, 4);
+}
+
+.call__link {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #088178;
+    margin-top: 1.5rem;
+    padding: 1rem 1.8rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 5px;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+
+.call__link:hover {
+    background-color: #fff;
+    color: #088178;
+}
+
+@media (max-width: 620px) {
+    .call__title {
+        font-size: 1.3rem;
+    }
+    
+    .call__desc {
+        font-size: 2.1rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .call {
+        padding: 4rem 0.2rem;
+    }
+
+    .call__title {
+        font-size: 1rem;
+    }
+    
+    .call__desc {
+        font-size: 1.6rem;
+    }
+
+    .call__link {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
