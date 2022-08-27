@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
+
+// context
+import { cartContext } from "../../context/CartContextProvider";
 
 // styles
 import styles from "./Navbar.module.css";
@@ -13,6 +16,7 @@ import { BsHandbag } from "react-icons/bs";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const {state, dispath} = useContext(cartContext)
 
   const menuHandler = () => {
     setToggle((prevState) => !prevState);
@@ -99,7 +103,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className={styles.nav__card}>
+        <div className={state.selectedItems.length ? [styles['nav__cart'],styles['cart-animation']].join(" ") : styles['nav__cart']}>
           <BsHandbag />
         </div>
 

@@ -64,11 +64,27 @@
     width: 50%;
 }
 
-.nav__card {
+.nav__cart {
     margin: 0 1rem;
     font-size: 1.5rem;
     cursor: pointer;
 }
+
+.cart-animation {
+    animation: pulse 1.5s ease-in-out infinite both alternate;
+}
+
+@keyframes pulse {
+    from {
+        filter: drop-shadow(0 0 0 #088178) drop-shadow(0 0 0 #088178)
+        drop-shadow(0 0 0 #088178);
+    }
+    to {
+        filter: drop-shadow(0 0 1px #088178) drop-shadow(0 0 1px #088178)
+        drop-shadow(0 0 1px #088178);
+    }
+    
+  }
 
 .nav__account {
     border: 1px solid gray;
@@ -88,7 +104,7 @@
         cursor: pointer;
     }
 
-    .nav__card {
+    .nav__cart {
         margin: 0 0.8rem;
     }
 
