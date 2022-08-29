@@ -103,9 +103,9 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className={state.selectedItems.length ? [styles['nav__cart'],styles['cart-animation']].join(" ") : styles['nav__cart']}>
+        <NavLink to="/cart" className={({isActive}) => isActive ? [styles['nav__cart'],styles['nav__cart-active']].join(' ') : styles.nav__cart}>
           <BsHandbag />
-        </div>
+        </NavLink>
 
         <div className={styles.nav__account}>
           <span>SingnIn/Login</span>

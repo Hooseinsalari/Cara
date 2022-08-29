@@ -7,6 +7,7 @@ import CartContextProvider from './context/CartContextProvider';
 // pages
 import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
+import CartPage from './pages/CartPage';
 
 // components
 import Navbar from './components/shared/Navbar';
@@ -18,6 +19,7 @@ function App() {
       <div className="App">
         <Navbar />
         <Routes>
+          <Route path='/cart' element={<CartPage />} />
           <Route path='/shop' element={<ShopPage />} />
           <Route path='/' element={<HomePage />} />
         </Routes>

@@ -68,23 +68,17 @@
     margin: 0 1rem;
     font-size: 1.5rem;
     cursor: pointer;
+    color: #1a1a1a;
+    transition: 0.3s ease-in-out;
 }
 
-.cart-animation {
-    animation: pulse 1.5s ease-in-out infinite both alternate;
+.nav__cart-active {
+    color: #088178;
 }
 
-@keyframes pulse {
-    from {
-        filter: drop-shadow(0 0 0 #088178) drop-shadow(0 0 0 #088178)
-        drop-shadow(0 0 0 #088178);
-    }
-    to {
-        filter: drop-shadow(0 0 1px #088178) drop-shadow(0 0 1px #088178)
-        drop-shadow(0 0 1px #088178);
-    }
-    
-  }
+.nav__cart:hover {
+    color: #088178;
+}
 
 .nav__account {
     border: 1px solid gray;

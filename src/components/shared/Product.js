@@ -9,7 +9,9 @@ import styles from "./Product.module.css";
 // icons
 import { FaStar } from "react-icons/fa";
 import { BsCart3, BsTrash } from "react-icons/bs";
-import { isInCart } from "../../helper/function";
+
+// functions
+import { isInCart, shorten } from "../../helper/function";
 
 const Product = ({ product }) => {
   const { state, dispatch } = useContext(cartContext);
@@ -24,7 +26,7 @@ const Product = ({ product }) => {
         </div>
         <div className={styles.pro__text}>
           <span className={styles.pro__brand}>adidas</span>
-          <span className={styles.pro__name}>{product.title}</span>
+          <span className={styles.pro__name}>{shorten(product.title)}</span>
 
           <div className={styles.pro__desc}>
             <div className={styles["pro__footer-left"]}>
