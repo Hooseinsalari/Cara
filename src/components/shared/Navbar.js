@@ -11,6 +11,7 @@ import logo from "../../img/logo.png";
 import { FaBars } from "react-icons/fa";
 import { BsHandbag } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
+import { FiLogIn } from "react-icons/fi";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -43,8 +44,28 @@ const Navbar = () => {
               : styles.nav__menu
           }
         >
-          <div onClick={menuHandler} className={styles.nav__close}>
-            <IoMdClose />
+          <div className={styles["nav__menu-top"]}>
+            <div onClick={menuHandler} className={styles.nav__close}>
+              <IoMdClose />
+            </div>
+
+            <NavLink
+              onClick={() => setToggle(false)}
+              to="/login"
+              className={({ isActive }) =>
+                isActive
+                  ? [
+                      styles["nav__account-top"],
+                      styles["nav__account-top-active"],
+                    ].join(" ")
+                  : styles['nav__account-top']
+              }
+            >
+              Login{" "}
+              <span>
+                <FiLogIn />
+              </span>
+            </NavLink>
           </div>
           <ul className={styles.nav__list}>
             <li className={styles.nav__item}>
@@ -122,9 +143,21 @@ const Navbar = () => {
           <BsHandbag />
         </NavLink>
 
-        <div className={styles.nav__account}>
-          <span>SingnIn/Login</span>
-        </div>
+        <NavLink
+          to="/login"
+          className={({ isActive }) =>
+            isActive
+              ? [styles["nav__account"], styles["nav__account-active"]].join(
+                  " "
+                )
+              : styles.nav__account
+          }
+        >
+          Login{" "}
+          <span>
+            <FiLogIn />
+          </span>
+        </NavLink>
       </div>
     </nav>
   );
