@@ -23,34 +23,6 @@
   font-weight: 600;
 }
 
-.login__section {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  margin: 2.5rem auto;
-}
-
-.login__label {
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-left: 0.8rem;
-}
-
-.login__input {
-  padding: 1rem 0.8rem;
-  font-size: 1.1rem;
-  width: 100%;
-  border-radius: 10px;
-  border: 1px solid #0f172a;
-  outline: none;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.login__input:focus {
-  background-color: #f0fdf4;
-}
-
 .login__submit {
   width: 100%;
   font-size: 1.2rem;
@@ -63,6 +35,11 @@
   margin-bottom: 2.5rem;
   transition: 0.3s ease-in-out;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.login__submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .login__submit:hover {
