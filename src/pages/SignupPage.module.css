@@ -53,6 +53,18 @@
   color: #1d4ed8;
 }
 
+.signup__error {
+  text-align: center;
+  color: #dc2626;
+  background-color: #fecaca;
+  padding: 5px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 5px;
+  width: fit-content;
+  margin: 1rem auto;
+}
+
 /* responsive */
 @media (max-width: 530px) {
     .signup__form {

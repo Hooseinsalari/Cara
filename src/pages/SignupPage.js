@@ -1,5 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useState} from "react";
+import { Link, useNavigate } from "react-router-dom";
+
+// service
+import { signupUsers } from "../services/signupService";
 
 // components
 import Input from "../components/shared/Input";
@@ -17,6 +20,13 @@ const validationSchema = yup.object({
     .string()
     .email("Invalid Email Format")
     .required("Email is Required"),
+  phoneNumber: yup
+    .string()
+    .required("Phone Number is Required")
+    .matches(
+      /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
+      "Phone Number is Not Valid"
+    ),
   password: yup
     .string()
     .required("No password provided")
@@ -28,14 +38,39 @@ const validationSchema = yup.object({
 });
 
 const SignupPage = () => {
+  const [errors, setErrors] = useState("");
+  let history = useNavigate();
+
   const formik = useFormik({
     initialValues: {
       name: "",
       email: "",
+      phoneNumber: "",
       password: "",
       confirmPassword: "",
     },
-    onSubmit: (values) => console.log(values),
+    onSubmit: async (values) => {
+      const { name, email, password, phoneNumber } = values;
+
+      const userData = {
+        name,
+        email,
+        password,
+        phoneNumber
+      };
+
+      try {
+        const { data } = await signupUsers(userData);
+        console.log(data);
+        setErrors("")
+        history("/")
+      } catch (error) {
+        if(error.response && error.response.data.message) {
+          setErrors(error.response.data.message)
+        }
+        console.log(error);
+      }
+    },
     validationSchema,
   });
 
@@ -47,9 +82,28 @@ const SignupPage = () => {
             <h2>Signup</h2>
           </div>
 
-          <Input label="Name" name="name" formik={formik} placeholder="Hossein Salari" />
+          <Input
+            label="Name"
+            name="name"
+            formik={formik}
+            placeholder="Hossein Salari"
+          />
 
-          <Input label="Email" name="email" formik={formik} type="email" placeholder="example@gmail.com" />
+          <Input
+            label="Email"
+            name="email"
+            formik={formik}
+            type="email"
+            placeholder="example@gmail.com"
+          />
+
+          <Input
+            label="Phone number"
+            name="phoneNumber"
+            formik={formik}
+            type="tel"
+            placeholder="09121234567"
+          />
 
           <Input
             label="Password"
@@ -66,6 +120,8 @@ const SignupPage = () => {
             type="password"
             placeholder="12345678"
           />
+
+          {errors ? <p className={styles.signup__error}>{errors}</p> : null}
 
           <button
             type="submit"

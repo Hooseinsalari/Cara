@@ -1,5 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+// service
+import { loginUsers } from "../services/loginService";
 
 // components
 import Input from "../components/shared/Input";
@@ -10,6 +13,7 @@ import styles from "./LoginPage.module.css";
 // formik
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { useState } from "react";
 
 const validationSchema = yup.object({
   email: yup
@@ -23,12 +27,27 @@ const validationSchema = yup.object({
 });
 
 const LoginPage = () => {
+  const [errors, setErrors] = useState("");
+  let history = useNavigate()
+
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
-    onSubmit: (values) => console.log(values),
+    onSubmit: async (values) => {
+      try {
+        const { data } = await loginUsers(values);
+        console.log(data);
+        setErrors("");
+        history("/")
+      } catch (error) {
+        console.log(error);
+        if (error.response && error.response.data.message) {
+          setErrors(error.response.data.message);
+        }
+      }
+    },
     validationSchema,
   });
 
@@ -39,7 +58,13 @@ const LoginPage = () => {
           <h2>Login</h2>
         </div>
 
-        <Input label="Email" name="email" formik={formik} type="email" placeholder="example@gmail.com" />
+        <Input
+          label="Email"
+          name="email"
+          formik={formik}
+          type="email"
+          placeholder="example@gmail.com"
+        />
 
         <Input
           label="Password"
@@ -48,6 +73,8 @@ const LoginPage = () => {
           type="password"
           placeholder="12345678"
         />
+
+        {errors ? <p className={styles.login__error}>{errors}</p> : null}
 
         <button
           type="submit"

@@ -16,7 +16,6 @@ content-type: application/json
     "email": "hossein.test@gmail.com",
     "password": "09106754656",
     "name":"wahed m",
-    "phoneNumber":"09106754656"
 }
 
 ###
