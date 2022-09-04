@@ -1,5 +1,9 @@
-import React from "react";
+import React, {useState, useContext} from "react";
+
 import { Link, useNavigate } from "react-router-dom";
+
+// context
+import { authContext } from "../context/AuthContextProvider";
 
 // service
 import { loginUsers } from "../services/loginService";
@@ -13,7 +17,6 @@ import styles from "./LoginPage.module.css";
 // formik
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { useState } from "react";
 
 const validationSchema = yup.object({
   email: yup
@@ -28,6 +31,7 @@ const validationSchema = yup.object({
 
 const LoginPage = () => {
   const [errors, setErrors] = useState("");
+  const {setUserData} = useContext(authContext)
   let history = useNavigate()
 
   const formik = useFormik({
@@ -38,6 +42,7 @@ const LoginPage = () => {
     onSubmit: async (values) => {
       try {
         const { data } = await loginUsers(values);
+        setUserData(data)
         console.log(data);
         setErrors("");
         history("/")

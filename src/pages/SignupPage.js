@@ -1,5 +1,9 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
+
 import { Link, useNavigate } from "react-router-dom";
+
+// context
+import { authContext } from "../context/AuthContextProvider";
 
 // service
 import { signupUsers } from "../services/signupService";
@@ -39,6 +43,7 @@ const validationSchema = yup.object({
 
 const SignupPage = () => {
   const [errors, setErrors] = useState("");
+  const {setUserData} = useContext(authContext)
   let history = useNavigate();
 
   const formik = useFormik({
@@ -61,6 +66,7 @@ const SignupPage = () => {
 
       try {
         const { data } = await signupUsers(userData);
+        setUserData(data)
         console.log(data);
         setErrors("")
         history("/")

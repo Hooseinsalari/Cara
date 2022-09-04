@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
+
 import { NavLink } from "react-router-dom";
+
+// context
+import { authContext } from "../../context/AuthContextProvider";
 
 // styles
 import styles from "./Navbar.module.css";
@@ -11,14 +15,20 @@ import logo from "../../img/logo.png";
 import { FaBars } from "react-icons/fa";
 import { BsHandbag } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
-import { FiLogIn } from "react-icons/fi";
+import { FiLogIn, FiUser } from "react-icons/fi";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-
+  const [profile, setProfile] = useState(false);
+  const { userData } = useContext(authContext);
+  
   const menuHandler = () => {
     setToggle((prevState) => !prevState);
   };
+
+  const profileHandler = () => {
+    setProfile((prevState) => !prevState)
+  }
 
   return (
     <nav className={styles.nav}>
@@ -44,29 +54,10 @@ const Navbar = () => {
               : styles.nav__menu
           }
         >
-          <div className={styles["nav__menu-top"]}>
-            <div onClick={menuHandler} className={styles.nav__close}>
-              <IoMdClose />
-            </div>
-
-            <NavLink
-              onClick={() => setToggle(false)}
-              to="/login"
-              className={({ isActive }) =>
-                isActive
-                  ? [
-                      styles["nav__account-top"],
-                      styles["nav__account-top-active"],
-                    ].join(" ")
-                  : styles['nav__account-top']
-              }
-            >
-              Login{" "}
-              <span>
-                <FiLogIn />
-              </span>
-            </NavLink>
+          <div onClick={menuHandler} className={styles.nav__close}>
+            <IoMdClose />
           </div>
+
           <ul className={styles.nav__list}>
             <li className={styles.nav__item}>
               <NavLink
@@ -143,21 +134,39 @@ const Navbar = () => {
           <BsHandbag />
         </NavLink>
 
-        <NavLink
-          to="/login"
-          className={({ isActive }) =>
-            isActive
-              ? [styles["nav__account"], styles["nav__account-active"]].join(
-                  " "
-                )
-              : styles.nav__account
-          }
-        >
-          Login{" "}
-          <span>
-            <FiLogIn />
-          </span>
-        </NavLink>
+        {/* if userData was true show profile else show login icon */}
+        {userData ? (
+          <div className={styles.nav__profile}>
+            <div onClick={profileHandler} className={styles["profile__icon"]}>
+              <FiUser />
+            </div>
+
+            <div className={profile ? [styles["profile__items"], styles["profile__items-active"]].join(" ") : styles["profile__items"]}>
+              <p className={styles.profile__name}>{userData.name}</p>
+              <p className={styles.profile__phone}>{userData.phoneNumber}</p>
+              <p className={styles.profile__email}>{userData.email}</p>
+              <button className={styles.profile__logout}>Logout</button>
+            </div>
+          </div>
+        ) : (
+          <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              isActive
+                ? [styles["nav__account"], styles["nav__account-active"]].join(
+                    " "
+                  )
+                : styles.nav__account
+            }
+          >
+            <>
+              <span className={styles["nav__account-text"]}>Login</span>
+              <span>
+                <FiLogIn />
+              </span>
+            </>
+          </NavLink>
+        )}
       </div>
     </nav>
   );

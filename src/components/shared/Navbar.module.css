@@ -86,42 +86,86 @@
     color: #088178;
 }
 
-/* nav__account-top active in nav menu in movile */
+.profile__icon {
+    position: relative;
+    font-size: 1.5rem;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    margin-left: 0.3rem;
+}
 
-.nav__account, .nav__account-top {
-    display: inline-block;
-    border: 1px solid #323232;
-    padding: .6rem 1.3rem;
-    margin: 0 1rem;
-    border-radius: 25px;
-    text-decoration: none;
-    font-size: 1.1rem;
+.profile__icon:hover {
+    color: #088178;
+}
+
+.profile__items {
+    position: absolute;
+    right: 35px;
+    top: 60px;
+    background-color: #e4e6f4;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+    display: none;
+}
+
+.profile__items-active {
+    display: block;   
+}
+
+.profile__items p {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    font-weight: 600;
+}
+
+.profile__logout {
+    background-color: #dc2626;
+    border: none !important;
+    padding: 0.6rem 1rem;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.nav__account {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 0.5rem;
+    text-decoration: none;
     color: #1a1a1a;
-    font-weight: 500;
     transition: 0.3s ease-in-out;
 }
 
-.nav__account-active, .nav__account-top-active {
-    border: 1px solid #088178;
+.nav__account-active {
     color: #088178;
 }
 
-.nav__account:hover , .nav__account-top:hover {
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+.nav__account-text {
+    font-size: 1rem;
+    margin-right: 0.2rem;
+    letter-spacing: 0.5px;
 }
 
-.nav__account span , .nav__account-top span{
-    margin-left: 0.3rem;
+.nav__account span{
     transition: 0.3s ease-in-out;
+    font-size: 1.2rem;
 }
 
-.nav__account:hover span , .nav__account-top:hover span{
+.nav__account:hover span {
+    color: #088178;
+}
+
+.nav__account:hover span:last-child{
     transform: translateX(3px);
-    color: #088178;
 }
+
 /* media queris */
 @media (max-width: 768px) {
     .nav {
@@ -148,11 +192,24 @@
     }
 
     .nav__cart {
-        margin: 0 0.8rem;
+        margin: 0 0.7rem;
     }
 
     .nav__account {
-        margin: 0 0 0 0.3rem;
+        margin: 0;
+    }
+
+    .nav__account span {
+        font-size: 1.5rem;
+    }
+
+    .nav__account:hover span:last-child {
+        color: #088178;
+        transform: none;
+    }
+
+    .nav__account-text {
+        display: none;
     }
 
     .nav__menu {
@@ -182,29 +239,11 @@
         margin: 1rem auto;
     }
 
-    .nav__menu-top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        margin-bottom: 2rem;
-    }
-
     .nav__close {
         display: block;
         text-align: left;
         font-size: 1.8rem;
         cursor: pointer;
-    }
-}
-
-@media (max-width: 542px) {
-    .nav__account {
-        display: none;
-    }
-    
-    .nav__account-top {
-        display: flex;
     }
 }
 

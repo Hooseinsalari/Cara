@@ -53,6 +53,7 @@
     color: #f8fafc;
     letter-spacing: 0.2px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .cart__clear {

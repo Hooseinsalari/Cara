@@ -39,12 +39,13 @@ const CartPage = () => {
             >
               clear
             </button>
-            <button
+            <Link
+              to="/"
               onClick={() => dispatch({ type: "CHECKOUT" })}
               className={styles.cart__checkout}
             >
               Checkout
-            </button>
+            </Link>
           </div>
         </div>
       </div>
