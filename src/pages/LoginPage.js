@@ -11,6 +11,9 @@ import { loginUsers } from "../services/loginService";
 // components
 import Input from "../components/shared/Input";
 
+// hook
+import useQuery from "../hook/useQuery";
+
 // style
 import styles from "./LoginPage.module.css";
 
@@ -34,6 +37,11 @@ const LoginPage = () => {
   const {setUserData} = useContext(authContext)
   let history = useNavigate()
 
+  // when user click on checkout
+  // if user was login redirect to home else redirect to signup page
+  const query = useQuery();
+  const redirect = query.get('redirect') || "/";
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -45,7 +53,7 @@ const LoginPage = () => {
         setUserData(data)
         console.log(data);
         setErrors("");
-        history("/")
+        history(redirect)
       } catch (error) {
         console.log(error);
         if (error.response && error.response.data.message) {
@@ -89,7 +97,7 @@ const LoginPage = () => {
           submit
         </button>
 
-        <Link className={styles.login__link} to="/signup">
+        <Link className={styles.login__link} to={`/signup?redirect=${redirect}`}>
           Create account
         </Link>
       </form>

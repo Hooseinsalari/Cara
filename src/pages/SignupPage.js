@@ -1,6 +1,6 @@
 import React, {useContext, useState} from "react";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 // context
 import { authContext } from "../context/AuthContextProvider";
@@ -10,6 +10,9 @@ import { signupUsers } from "../services/signupService";
 
 // components
 import Input from "../components/shared/Input";
+
+// hook
+import useQuery from "../hook/useQuery";
 
 // style
 import styles from "./SignupPage.module.css";
@@ -46,6 +49,11 @@ const SignupPage = () => {
   const {setUserData} = useContext(authContext)
   let history = useNavigate();
 
+  // when user click on checkout
+  // if user was login redirect to home else redirect to signup page
+  const query = useQuery();
+  const redirect = query.get('redirect') || "/";
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -69,7 +77,7 @@ const SignupPage = () => {
         setUserData(data)
         console.log(data);
         setErrors("")
-        history("/")
+        history(redirect)
       } catch (error) {
         if(error.response && error.response.data.message) {
           setErrors(error.response.data.message)
@@ -137,7 +145,7 @@ const SignupPage = () => {
             submit
           </button>
 
-          <Link className={styles.signup__link} to="/login">
+          <Link className={styles.signup__link} to={`/login?redirect=${redirect}`}>
             Already have account?
           </Link>
         </form>
