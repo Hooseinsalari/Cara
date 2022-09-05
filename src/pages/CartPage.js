@@ -18,7 +18,7 @@ const CartPage = () => {
       <div className={styles.cart}>
         <div className={styles.left}>
           {state.selectedItems.map((item) => (
-            <Cart key={item.id} item={item} dispatch={dispatch} />
+            <Cart key={item._id} item={item} dispatch={dispatch} />
           ))}
         </div>
 

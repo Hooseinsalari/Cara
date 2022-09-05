@@ -16,8 +16,8 @@ const Cart = ({ item, dispatch }) => {
       <div className={styles.cart__detail}>
         <img className={styles.cart__image} src={item.image} alt="" />
         <div className={styles.cart__text}>
-          <span className={styles.cart__brand}>addidas</span>
-          <span className={styles.cart__title}>{shorten(item.title)}</span>
+          <span className={styles.cart__brand}>{item.brand}</span>
+          <span className={styles.cart__title}>{shorten(item.name)}</span>
         </div>
       </div>
 

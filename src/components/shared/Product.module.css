@@ -1,4 +1,4 @@
-.arrive-products {
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,7 +8,7 @@
 .product {
   background-color: #fff;
   padding: 0.5rem;
-  width: 17rem;
+  width: auto;
   border-radius: 15px;
   border: 1px solid #cce7d0;
   transition: 0.3s;
@@ -117,11 +117,10 @@
 /* media queris */
 @media (max-width: 768px) {
   .container {
-    padding: 0 1rem;
+    padding: 0;
   }
 
   .product {
-    width: 13rem;
     margin: 0.5rem;
   }
 
@@ -138,7 +137,6 @@
 
 @media (max-width: 483px) {
   .product {
-    width: 11rem;
     margin: 0.5rem;
     text-align: left;
   }
@@ -160,8 +158,8 @@
   }
 
   .pro__cart {
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     font-size: 1.1rem;
   }
 }

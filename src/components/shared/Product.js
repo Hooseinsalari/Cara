@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // context
 import { cartContext } from "../../context/CartContextProvider";
@@ -18,15 +19,17 @@ const Product = ({ product }) => {
 
   const [flip, setFlip] = useState(false);
 
+  const navigate = useNavigate()
+
   return (
-    <div className={styles["arrive-products"]}>
+    <div className={styles["container"]} onClick={() => navigate(`/shop/product/${product.id}`)}>
       <div className={styles.product}>
         <div className={styles.pro__image}>
           <img src={product.image} alt="" />
         </div>
         <div className={styles.pro__text}>
-          <span className={styles.pro__brand}>adidas</span>
-          <span className={styles.pro__name}>{shorten(product.title)}</span>
+          <span className={styles.pro__brand}>{product.brand}</span>
+          <span className={styles.pro__name}>{shorten(product.name)}</span>
 
           <div className={styles.pro__desc}>
             <div className={styles["pro__footer-left"]}>
@@ -37,13 +40,14 @@ const Product = ({ product }) => {
                 <FaStar />
                 <FaStar />
               </div>
-              <span className={styles.pro__count}>{product.price}</span>
+              <span className={styles.pro__count}>${product.price}</span>
             </div>
 
             {!isInCart(state, product.id) ? (
               <button
-                onClick={() =>
-                    dispatch({ type: "ADD_TO_CART", payload: product })
+                onClick={(e) =>
+                    {e.stopPropagation()
+                    dispatch({ type: "ADD_TO_CART", payload: product })}
                 }
                 className={styles["pro__cart"]}
               >
@@ -55,9 +59,10 @@ const Product = ({ product }) => {
               </button>
             ) : (
               <button
-                onClick={() =>
+                onClick={(e) =>{
+                  e.stopPropagation()
                   dispatch({ type: "REMOVE__ITEM", payload: product })
-                }
+                }}
                 className={styles["pro__cart"]}
                 style={{color: "#b91c1c"}}
               >

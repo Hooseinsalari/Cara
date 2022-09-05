@@ -11,6 +11,7 @@ import ShopPage from "./pages/ShopPage";
 import CartPage from "./pages/CartPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
+import ProductPage from "./pages/ProductPage";
 
 // components
 import Navbar from "./components/shared/Navbar";
@@ -28,6 +29,7 @@ function App() {
               <Route path="/signup" element={<SignupPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/cart" element={<CartPage />} />
+              <Route path="/shop/product/:id" element={<ProductPage />} />
               <Route path="/shop" element={<ShopPage />} />
               <Route path="/" element={<HomePage />} />
             </Routes>
