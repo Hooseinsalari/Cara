@@ -25,7 +25,7 @@ const Product = ({ product }) => {
     <div className={styles["container"]} onClick={() => navigate(`/shop/product/${product.id}`)}>
       <div className={styles.product}>
         <div className={styles.pro__image}>
-          <img src={product.image} alt="" />
+          <img loading="lazy" src={product.image} alt="" />
         </div>
         <div className={styles.pro__text}>
           <span className={styles.pro__brand}>{product.brand}</span>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // style
 import styles from "./Header.module.css";
@@ -12,7 +13,7 @@ const Header = () => {
                 <h1 className={styles['head__desc-second']}>On all products</h1>
                 <p className={styles.head__footer}>Save more with couponse and up to 70% Off !</p>
                 <div className={styles.head__link}>
-                    <a href="#">Shop now</a>
+                    <Link to="/shop">Shop now</Link>
                 </div>
             </div>
         </header>

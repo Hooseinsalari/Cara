@@ -16,10 +16,16 @@
 
 .right {
     width: 25%;
-    background-color: #f8fafc;
+    height: 12rem;
+    background-color: #fff;
     padding: 1rem;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    border-radius: 5px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: left;
+    line-height: 20px;
 }
 
 .top {
@@ -39,13 +45,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2.3rem;
 }
 
 .cart__checkout {
     width: 70%;
     border: 1px solid gray;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 0.7rem 0;
     font-size: 1rem;
     font-weight: 500;
@@ -60,7 +65,7 @@
     width: 30%;
     margin-right: 0.8rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 0.7rem 0;
     font-size: 1rem;
     font-weight: 500;
@@ -86,6 +91,12 @@
 }
 
 /* queris */
+@media (max-width: 1024px) {
+    .right {
+        height: 10rem;
+    }
+}
+
 @media (max-width: 860px) {
     .left {
         margin-right: 1.5rem;
@@ -96,10 +107,6 @@
 
     .top label {
         font-size: 1rem;
-    }
-
-    .cart__btns {
-        margin-top: 2.5rem;
     }
 
     .cart__checkout {
