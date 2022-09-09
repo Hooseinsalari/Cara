@@ -1,5 +1,5 @@
 const isInCart = (state, id) => {
-  const result = !!state.selectedItems.find((item) => item.id === id);
+  const result = !!state.selectedItems.find((item) => item._id === id);
 
   return result;
 };

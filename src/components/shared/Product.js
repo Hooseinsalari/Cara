@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 // context
 import { cartContext } from "../../context/CartContextProvider";
@@ -22,8 +22,11 @@ const Product = ({ product }) => {
   const navigate = useNavigate()
 
   return (
-    <div className={styles["container"]} onClick={() => navigate(`/shop/product/${product.id}`)}>
+    <div className={styles["container"]}>
       <div className={styles.product}>
+        {/* product detail link */}
+        <Link to={`/shop/product/${product._id}`} className={styles['product__detail']} >detail</Link>
+
         <div className={styles.pro__image}>
           <img loading="lazy" src={product.image} alt="" />
         </div>
@@ -43,11 +46,10 @@ const Product = ({ product }) => {
               <span className={styles.pro__count}>${product.price}</span>
             </div>
 
-            {!isInCart(state, product.id) ? (
+            {!isInCart(state, product._id) ? (
               <button
-                onClick={(e) =>
-                    {e.stopPropagation()
-                    dispatch({ type: "ADD_TO_CART", payload: product })}
+                onClick={() =>
+                    dispatch({ type: "ADD_TO_CART", payload: product })
                 }
                 className={styles["pro__cart"]}
               >
@@ -59,10 +61,10 @@ const Product = ({ product }) => {
               </button>
             ) : (
               <button
-                onClick={(e) =>{
-                  e.stopPropagation()
+                onClick={() =>
+                  
                   dispatch({ type: "REMOVE__ITEM", payload: product })
-                }}
+                }
                 className={styles["pro__cart"]}
                 style={{color: "#b91c1c"}}
               >

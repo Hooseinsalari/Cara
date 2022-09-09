@@ -13,12 +13,38 @@
   border: 1px solid #cce7d0;
   transition: 0.3s;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  cursor: pointer;
   margin: 1rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .product:hover {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.product__detail {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #088178;
+  width: fit-content;
+  margin: auto;
+  border-radius: 20px 20px 0 0;
+  box-shadow: rgb(0 0 0 / 20%) 0px 0px 6px 1px;
+  padding: 10px 12px 2px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  font-size: 1.1rem;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s 0.3s ease-in-out;
+  transform: translateY(40px);
+}
+
+.product:hover .product__detail {
+  transform: translateY(0);
 }
 
 .pro__text {
