@@ -1,6 +1,6 @@
 import React, {useState, useContext} from "react";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 // context
 import { authContext } from "../context/AuthContextProvider";
@@ -10,6 +10,9 @@ import { loginUsers } from "../services/loginService";
 
 // components
 import Input from "../components/shared/Input";
+
+// hooks
+import useQuery from "../hooks/useQuery";
 
 // style
 import styles from "./LoginPage.module.css";
@@ -31,8 +34,11 @@ const validationSchema = yup.object({
 
 const LoginPage = () => {
   const [errors, setErrors] = useState("");
-  const {setUserData} = useContext(authContext)
-  let history = useNavigate()
+  const {setUserData} = useContext(authContext);
+  let navigate = useNavigate()
+  const query = useQuery();
+  const redirect = query.get("redirect") ? `/${query.get("redirect")}` : "/";
+  console.log(redirect);
 
   const formik = useFormik({
     initialValues: {
@@ -43,9 +49,8 @@ const LoginPage = () => {
       try {
         const { data } = await loginUsers(values);
         setUserData(data)
-        console.log(data);
         setErrors("");
-        history("/")
+        navigate(redirect)
       } catch (error) {
         console.log(error);
         if (error.response && error.response.data.message) {
@@ -89,7 +94,7 @@ const LoginPage = () => {
           submit
         </button>
 
-        <Link className={styles.login__link} to='/signup'>
+        <Link className={styles.login__link} to={`/signup?redirect=${redirect}`}>
           Create account
         </Link>
       </form>

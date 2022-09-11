@@ -9,9 +9,11 @@ import Cart from "../components/shared/Cart";
 
 // context
 import { cartContext } from "../context/CartContextProvider";
+import { authContext } from "../context/AuthContextProvider";
 
 const CartPage = () => {
   const { state, dispatch } = useContext(cartContext);
+  const {userData} = useContext(authContext)
 
   const renderCart = () => {
     return (
@@ -39,12 +41,13 @@ const CartPage = () => {
             >
               clear
             </button>
-            <button
+            <Link
+              to={userData ? '/cart' : '/login?redirect=cart'}
               onClick={() => dispatch({ type: "CHECKOUT" })}
               className={styles.cart__checkout}
             >
               Checkout
-            </button>
+            </Link>
           </div>
         </div>
       </div>

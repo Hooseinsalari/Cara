@@ -11,6 +11,9 @@ import { signupUsers } from "../services/signupService";
 // components
 import Input from "../components/shared/Input";
 
+// hooks
+import useQuery from "../hooks/useQuery";
+
 // style
 import styles from "./SignupPage.module.css";
 
@@ -44,7 +47,10 @@ const validationSchema = yup.object({
 const SignupPage = () => {
   const [errors, setErrors] = useState("");
   const {setUserData} = useContext(authContext)
-  let history = useNavigate();
+  let navigate = useNavigate();
+  const query = useQuery()
+  const redirect = query.get("redirect") ? `${query.get("redirect")}` : "/";
+  console.log(redirect);
 
   const formik = useFormik({
     initialValues: {
@@ -69,7 +75,7 @@ const SignupPage = () => {
         setUserData(data)
         console.log(data);
         setErrors("")
-        history("/")
+        navigate(redirect)
       } catch (error) {
         if(error.response && error.response.data.message) {
           setErrors(error.response.data.message)
@@ -137,7 +143,7 @@ const SignupPage = () => {
             submit
           </button>
 
-          <Link className={styles.signup__link} to='/login'>
+          <Link className={styles.signup__link} to={`/login?redirect=${redirect}`}>
             Already have account?
           </Link>
         </form>

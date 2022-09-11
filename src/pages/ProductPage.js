@@ -20,29 +20,28 @@ import styles from "./ProductPage.module.css";
 
 const ProductPage = () => {
   const { state, dispatch } = useContext(cartContext);
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState(null);
   const [collection, setCollection] = useState([])
-  const [loading, setLoading] = useState(true)
   let { id } = useParams();
   const [flip, setFlip] = useState(false);
 
+
   useEffect(() => {
+    setProduct(null)
+
     const fetchData = async () => {
       const { data } = await getOneProduct(id);
       setProduct(data)
     };
     
-    setTimeout(() => {
-      setLoading(false)
-    }, 2000)
-
     fetchData();
   }, [id]);
 
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await getAllProducts()
-      setCollection(data)
+      let slicedData = data.slice(3, 7)
+      setCollection(slicedData)
     }
 
     fetchData()
@@ -60,7 +59,7 @@ const ProductPage = () => {
 
   return (
     <div className={styles.container}>
-      {!loading ? (
+      { product ? (
         <div className={styles.main}>
           <div className={styles.product}>
             <div className={styles.product__image}>
@@ -102,7 +101,7 @@ const ProductPage = () => {
                 </div>
                
                 <div className={styles.collection__product}>
-                  {collection.slice(3, 7).map((product) => (
+                  {collection.map((product) => (
                     <Product key={product._id} product={product} />
                   ))}
                 </div>
