@@ -20,7 +20,7 @@
 }
 
 .profile__menu {
-    min-width: 15rem;
+    max-width: 15rem;
   position: absolute;
   right: 35px;
   top: 60px;
@@ -101,18 +101,9 @@
     opacity: 0.8;
 }
 
-/* .profile__items p {
-  padding: 0.6rem 1rem;
-  border-bottom: 1px solid rgb(200, 200, 200);
-  font-weight: 600;
+/* responsive */
+@media (max-width: 768px) {
+    .profile__menu {
+        right: 15px;
+    }
 }
-
-.profile__logout {
-  background-color: #dc2626;
-  border: none;
-  padding: 0.6rem 1rem;
-  width: 100%;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-} */
