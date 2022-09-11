@@ -5,6 +5,9 @@ import { NavLink } from "react-router-dom";
 // context
 import { authContext } from "../../context/AuthContextProvider";
 
+// component
+import Profile from "../Profile";
+
 // styles
 import styles from "./Navbar.module.css";
 
@@ -15,20 +18,15 @@ import logo from "../../img/logo.png";
 import { FaBars } from "react-icons/fa";
 import { BsHandbag } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
-import { FiLogIn, FiUser } from "react-icons/fi";
+import { FiLogIn } from "react-icons/fi";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  const [profile, setProfile] = useState(false);
   const { userData } = useContext(authContext);
   
   const menuHandler = () => {
     setToggle((prevState) => !prevState);
   };
-
-  const profileHandler = () => {
-    setProfile((prevState) => !prevState)
-  }
 
   return (
     <nav className={styles.nav}>
@@ -136,18 +134,7 @@ const Navbar = () => {
 
         {/* if userData was true show profile else show login icon */}
         {userData ? (
-          <div className={styles.nav__profile}>
-            <div onClick={profileHandler} className={styles["profile__icon"]}>
-              <FiUser />
-            </div>
-
-            <div className={profile ? [styles["profile__items"], styles["profile__items-active"]].join(" ") : styles["profile__items"]}>
-              <p className={styles.profile__name}>{userData.name}</p>
-              <p className={styles.profile__phone}>{userData.phoneNumber}</p>
-              <p className={styles.profile__email}>{userData.email}</p>
-              <button className={styles.profile__logout}>Logout</button>
-            </div>
-          </div>
+          <Profile userData={userData} />
         ) : (
           <NavLink
             to="/login"
