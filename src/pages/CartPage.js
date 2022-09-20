@@ -15,6 +15,8 @@ const CartPage = () => {
   const { state, dispatch } = useContext(cartContext);
   const {userData} = useContext(authContext)
 
+  console.log(userData);
+
   const renderCart = () => {
     return (
       <div className={styles.cart}>
@@ -43,7 +45,7 @@ const CartPage = () => {
             </button>
             <Link
               to={userData ? '/cart' : '/login?redirect=cart'}
-              onClick={() => dispatch({ type: "CHECKOUT" })}
+              onClick={() => userData._id ? dispatch({ type: "CHECKOUT" }) : null}
               className={styles.cart__checkout}
             >
               Checkout

@@ -1,6 +1,6 @@
 import React, {useState, useContext} from "react";
 
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams} from "react-router-dom";
 
 // context
 import { authContext } from "../context/AuthContextProvider";
@@ -94,7 +94,7 @@ const LoginPage = () => {
           submit
         </button>
 
-        <Link className={styles.login__link} to={`/signup?redirect=${redirect}`}>
+        <Link className={styles.login__link} to={`/signup?redirect=${redirect.substring(1)}`}>
           Create account
         </Link>
       </form>

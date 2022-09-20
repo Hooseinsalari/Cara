@@ -49,7 +49,7 @@ const SignupPage = () => {
   const {setUserData} = useContext(authContext)
   let navigate = useNavigate();
   const query = useQuery()
-  const redirect = query.get("redirect") ? `${query.get("redirect")}` : "/";
+  const redirect = query.get("redirect") ? `/${query.get("redirect")}` : "/";
   console.log(redirect);
 
   const formik = useFormik({
@@ -143,7 +143,7 @@ const SignupPage = () => {
             submit
           </button>
 
-          <Link className={styles.signup__link} to={`/login?redirect=${redirect}`}>
+          <Link className={styles.signup__link} to={`/login?redirect=${redirect.substring(1)}`}>
             Already have account?
           </Link>
         </form>
