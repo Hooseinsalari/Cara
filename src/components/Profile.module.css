@@ -7,7 +7,7 @@
 }
 
 .profile__icon-active {
-    color: #088178;
+  color: #088178;
 }
 
 .profile__icon:hover {
@@ -15,12 +15,13 @@
 }
 
 .profile__name {
-    color: #1a1a1a;
-    font-weight: 600;
+  color: #1a1a1a;
+  font-weight: 600;
 }
 
 .profile__menu {
-    max-width: 15rem;
+  min-width: 11rem;
+  max-width: 17rem;
   position: absolute;
   right: 35px;
   top: 60px;
@@ -39,71 +40,71 @@
 }
 
 .profile__menu-active {
-    visibility: visible;
-    opacity: 1;
-    transform: scale(1);
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
 }
 
 .profile__email {
-    color: rgb(87, 87, 87);
-    font-weight: 600;
-    margin: .5rem auto;
+  color: rgb(87, 87, 87);
+  font-weight: 600;
+  margin: 0.5rem auto;
 }
 
 .profile__item {
-    list-style: none;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid rgb(211, 211, 211);
-    padding: 0.7rem 0;
-    cursor: pointer;
+  list-style: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(211, 211, 211);
+  padding: 0.7rem 0;
+  cursor: pointer;
 }
 
 .profile__btn {
-    padding: 0.7rem 0 0;
-    width: 100%;
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
+  padding: 0.7rem 0 0;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
 }
 
 .profile__btn:hover .item__name {
-    opacity: 1;
+  opacity: 1;
 }
 
 .profile__btn:hover .item__icon {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .item__name {
-    font-size: 1.1rem;    
-    opacity: 0.8;
-    transition: 0.3s;
-    font-weight: 500;
-    margin-top: 0.2rem;
+  font-size: 1.1rem;
+  opacity: 0.8;
+  transition: 0.3s;
+  font-weight: 500;
+  margin-top: 0.2rem;
 }
 
 .profile__item:hover .item__name {
-    opacity: 1;
+  opacity: 1;
 }
 
 .item__icon {
-    font-size: 1.4rem;
-    margin-right: 0.5rem;
-    opacity: 0.5;
-    transition: .3s;
+  font-size: 1.4rem;
+  margin-right: 0.5rem;
+  opacity: 0.5;
+  transition: 0.3s;
 }
 
 .profile__item:hover .item__icon {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 /* responsive */
 @media (max-width: 768px) {
-    .profile__menu {
-        right: 15px;
-    }
+  .profile__menu {
+    right: 15px;
+  }
 }

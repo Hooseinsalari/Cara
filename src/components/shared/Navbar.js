@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useRef } from "react";
+import React, { useContext, useState } from "react";
 
 import { NavLink } from "react-router-dom";
 
@@ -22,7 +22,7 @@ import { FiLogIn } from "react-icons/fi";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  const { userData } = useContext(authContext);
+  const { userData, setUserData } = useContext(authContext);
   
   const menuHandler = () => {
     setToggle((prevState) => !prevState);
@@ -134,7 +134,7 @@ const Navbar = () => {
 
         {/* if userData was true show profile else show login icon */}
         {userData ? (
-          <Profile userData={userData} />
+          <Profile userData={userData} setUserData={setUserData} />
         ) : (
           <NavLink
             to="/login"

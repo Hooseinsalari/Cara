@@ -14,12 +14,17 @@ import { FaRegUserCircle } from "react-icons/fa";
 // styles
 import styles from "./Profile.module.css";
 
-const Profile = ({ userData }) => {
+const Profile = ({ userData, setUserData }) => {
   const [profile, setProfile] = useState(false);
 
   const profileHandler = () => {
     setProfile((prevState) => !prevState);
   };
+
+  const logoutHandler = () => {
+    localStorage.removeItem("authState")
+    setUserData(null)
+  }
 
   return (
     <div className={styles.profile}>
@@ -68,7 +73,7 @@ const Profile = ({ userData }) => {
             <FiHelpCircle className={styles.item__icon} />{" "}
             <span className={styles.item__name}>help</span>
           </li>
-          <button className={styles.profile__btn}>
+          <button className={styles.profile__btn} onClick={logoutHandler}>
             <FiLogOut className={styles.item__icon} />{" "}
             <span className={styles.item__name}>logout</span>
           </button>
