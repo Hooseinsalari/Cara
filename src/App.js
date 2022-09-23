@@ -12,6 +12,7 @@ import CartPage from "./pages/CartPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import ProductPage from "./pages/ProductPage";
+import Blog from "./pages/Blog";
 
 // components
 import Navbar from "./components/shared/Navbar";
@@ -26,6 +27,7 @@ function App() {
           <Navbar />
           <ScrollToTop>
             <Routes>
+              <Route path="/blog" element={<Blog />} />
               <Route path="/signup" element={<SignupPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/cart" element={<CartPage />} />

@@ -1,0 +1,146 @@
+.blog__header {
+  background: url("../img/banner/b19.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 0.5rem;
+}
+
+.blog__title {
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog__subtitle {
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.blog__items {
+    margin-top: 5rem;
+    padding: 0 4rem;
+}
+
+.blog__box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 6rem auto;
+}
+
+.blog__img {
+    width: 45%;
+    margin-right: 3rem;
+}
+
+.blog__img img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.blog__details {
+    text-align: left;
+    width: 50%;
+}
+
+.blog__details h2 {
+    color: #1a1a1a;
+}
+
+.blog__details p {
+    color: #606063;
+    font-size: 1.1rem;
+    margin: 1.5rem auto;
+    font-weight: 400;
+    line-height: 1.4rem;
+}
+
+.blog__details a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s ease-in-out;
+}
+
+.blog__details a::after {
+    content: '';
+    width: 4rem;
+    height: 2px;
+    background-color: #1a1a1a;
+    display: block;
+    margin-left: 1rem;
+    position: absolute;
+    right: -75px;
+    top: 6px;
+    transition: 0.3s ease-in-out;
+}
+
+.blog__details a:hover {
+    color: #088178;
+}
+
+.blog__details a:hover:after {
+    background-color: #088178;
+}
+
+.blog__date {
+    position: absolute;
+    top: -35px;
+    z-index: -1;
+    font-size: 3.8rem;
+    color: #c9cbce;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .blog__items {
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 530px) {
+    .blog__items {
+        padding: 0 1rem;
+    }
+
+    .blog__box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .blog__img {
+        width: 100%;
+    }
+
+    .blog__details {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .blog__details h2 {
+        color: #1a1a1a;
+        font-size: 1.3rem;
+    }
+    
+    .blog__details p {
+        color: #606063;
+        font-size: 1.1rem;
+        margin: 1rem auto;
+    }
+    
+    .blog__details a {
+        font-size: 0.9rem;
+    }
+
+    .blog__details a::after {
+        width: 3rem;
+        right: -55px;
+    }
+}
