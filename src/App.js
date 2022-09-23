@@ -13,6 +13,7 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import ProductPage from "./pages/ProductPage";
 import Blog from "./pages/Blog";
+import AboutPage from "./pages/AboutPage";
 
 // components
 import Navbar from "./components/shared/Navbar";
@@ -27,6 +28,7 @@ function App() {
           <Navbar />
           <ScrollToTop>
             <Routes>
+              <Route path="/about" element={<AboutPage />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/signup" element={<SignupPage />} />
               <Route path="/login" element={<LoginPage />} />
