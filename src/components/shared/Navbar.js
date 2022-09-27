@@ -117,6 +117,21 @@ const Navbar = () => {
                 About
               </NavLink>
             </li>
+            <li className={styles.nav__item}>
+              <NavLink
+                onClick={() => setToggle(false)} //for close menu
+                className={({ isActive }) =>
+                  isActive
+                    ? [styles["nav__link"], styles["nav__link-active"]].join(
+                        " "
+                      )
+                    : styles.nav__link
+                }
+                to="/contact"
+              >
+                Contact
+              </NavLink>
+            </li>
           </ul>
         </div>
 

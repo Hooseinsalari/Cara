@@ -1,0 +1,258 @@
+.contact__header {
+  background: url("../img/banner/b21.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 0.5rem;
+}
+
+.contact__title {
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact__subtitle {
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.contact__main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem;
+  margin: 4rem auto;
+}
+
+.contact__details {
+  text-align: left;
+  width: 40%;
+}
+
+.details__header {
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #606063;
+}
+
+.details__title {
+  font-size: 2rem;
+  margin: 1.8rem 0;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.details__addres {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1.5rem 0;
+}
+
+.contact__main li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 1.3rem 0;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.contact__main li span {
+  margin-left: 1rem;
+  margin-top: 0.2rem;
+  color: #606063;
+}
+
+.contact__map {
+  width: 55%;
+  height: 400px;
+}
+
+.contact__map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.comment {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  /* width: 100%; */
+  padding: 1rem;
+  margin: 7rem 4rem 5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 15px;
+}
+
+.comment__form {
+  text-align: left;
+  width: 70%;
+}
+
+.comment__form h4 {
+  color: #606063;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.comment__form h2 {
+  margin-bottom: 1rem;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+}
+
+#form input, #form textarea {
+  margin-bottom: 1rem;
+  padding: 0.8rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 10px;
+  border: 1px solid #606063;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+#form .form__submit {
+  width: fit-content;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  background-color: #088178;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.employees {
+  display: flex;
+  flex-direction: column;
+}
+
+.employee {
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.employee__img {
+  width: 5rem;
+  height: 5rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+  outline: 2px solid #088178;
+  padding: 0.2rem;
+}
+
+.employee__img img {
+  width: 100%;
+  height: 100%;
+}
+
+.employee__name {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.employee__position, .employee__number, .employee__email {
+  color: #606063;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .contact__main {
+    flex-direction: column;
+    padding: 0 2rem;
+  }
+
+  .contact__details {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .contact__map {
+    width: 100%;
+    height: 350px;
+  }
+
+  /* =-=-=-=-=-=-=-=-=-= */
+
+  .comment {
+    align-items: center;
+    flex-direction: column;
+    margin: 7rem 2rem 5rem;
+    padding: 1.6rem 1rem;
+  }
+
+  .comment__form {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .employees {
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .employee {
+    padding: 0.4rem;
+  }
+
+  .employee__img {
+    width: 4rem;
+    height: 4rem;
+  }
+  
+}
+
+@media (max-width: 425px) {
+  .contact__main {
+    padding: 0 1rem;
+  }
+
+  .details__header {
+    font-size: 0.9rem;
+  }
+  
+  .details__title {
+    font-size: 1.5rem;
+    margin: 1.4rem 0;
+  }
+  
+  .details__addres {
+    font-size: 1.1rem;
+    margin: 1rem 0;
+  }
+  
+  .contact__main li {
+    font-size: 1rem;
+  }
+
+  .contact__map {
+    height: 300px;
+  }
+
+  /* === */
+  .comment {
+    margin: 7rem 1rem 5rem;
+    padding: 1.6rem 1rem;
+  }
+}

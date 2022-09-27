@@ -14,6 +14,7 @@ import SignupPage from "./pages/SignupPage";
 import ProductPage from "./pages/ProductPage";
 import Blog from "./pages/Blog";
 import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
 
 // components
 import Navbar from "./components/shared/Navbar";
@@ -28,6 +29,7 @@ function App() {
           <Navbar />
           <ScrollToTop>
             <Routes>
+              <Route path="/contact" element={<ContactPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/signup" element={<SignupPage />} />
