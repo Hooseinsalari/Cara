@@ -34,11 +34,11 @@ const validationSchema = yup.object({
 
 const LoginPage = () => {
   const [errors, setErrors] = useState("");
-  const {setUserData} = useContext(authContext);
+  const {userData ,setUserData} = useContext(authContext);
   let navigate = useNavigate()
   const query = useQuery();
   const redirect = query.get("redirect") ? `/${query.get("redirect")}` : "/";
-  console.log(redirect);
+  const [loading, setLoading] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -47,14 +47,19 @@ const LoginPage = () => {
     },
     onSubmit: async (values) => {
       try {
+        setLoading(true)
         const { data } = await loginUsers(values);
         setUserData(data)
         setErrors("");
         navigate(redirect)
+        if (userData) {
+          setLoading(false)
+        }
       } catch (error) {
         console.log(error);
         if (error.response && error.response.data.message) {
           setErrors(error.response.data.message);
+          setLoading(false)
         }
       }
     },
@@ -91,7 +96,9 @@ const LoginPage = () => {
           disabled={!formik.isValid}
           className={styles.login__submit}
         >
-          submit
+          {
+            loading ? <span className={styles.loader}></span> : <span className={styles['login__btn-text']}>submit</span>
+          }
         </button>
 
         <Link className={styles.login__link} to={`/signup?redirect=${redirect.substring(1)}`}>

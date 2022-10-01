@@ -26,7 +26,6 @@
 .signup__submit {
   width: 100%;
   font-size: 1.2rem;
-  padding: 0.8rem;
   border-radius: 10px;
   border: 1px solid #07736c;
   background-color: #088178;
@@ -44,6 +43,11 @@
 
 .signup__submit:hover {
   background-color: #07736c;
+}
+
+.signup__btn-text {
+  margin: 1rem auto;
+  display: inline-block;
 }
 
 .signup__link {
@@ -65,10 +69,31 @@
   margin: 1rem auto;
 }
 
+.loader {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0.4rem auto;
+  border-top: 3px solid #fff;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* responsive */
 @media (max-width: 530px) {
-    .signup__form {
-        width: 90%;
-        margin: 3rem auto;
-    }
+  .signup__form {
+    width: 90%;
+    margin: 3rem auto;
+  }
 }
