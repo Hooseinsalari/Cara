@@ -1,6 +1,6 @@
-import React, {useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 
-import { Link, useNavigate, useSearchParams} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // context
 import { authContext } from "../context/AuthContextProvider";
@@ -34,8 +34,8 @@ const validationSchema = yup.object({
 
 const LoginPage = () => {
   const [errors, setErrors] = useState("");
-  const {userData ,setUserData} = useContext(authContext);
-  let navigate = useNavigate()
+  const { userData, setUserData } = useContext(authContext);
+  let navigate = useNavigate();
   const query = useQuery();
   const redirect = query.get("redirect") ? `/${query.get("redirect")}` : "/";
   const [loading, setLoading] = useState(false);
@@ -47,19 +47,18 @@ const LoginPage = () => {
     },
     onSubmit: async (values) => {
       try {
-        setLoading(true)
+        setLoading(true);
         const { data } = await loginUsers(values);
-        setUserData(data)
+        setUserData(data);
         setErrors("");
-        navigate(redirect)
+        navigate(redirect);
         if (userData) {
-          setLoading(false)
+          setLoading(false);
         }
       } catch (error) {
-        console.log(error);
         if (error.response && error.response.data.message) {
           setErrors(error.response.data.message);
-          setLoading(false)
+          setLoading(false);
         }
       }
     },
@@ -96,12 +95,17 @@ const LoginPage = () => {
           disabled={!formik.isValid}
           className={styles.login__submit}
         >
-          {
-            loading ? <span className={styles.loader}></span> : <span className={styles['login__btn-text']}>submit</span>
-          }
+          {loading ? (
+            <span className={styles.loader}></span>
+          ) : (
+            <span className={styles["login__btn-text"]}>submit</span>
+          )}
         </button>
 
-        <Link className={styles.login__link} to={`/signup?redirect=${redirect.substring(1)}`}>
+        <Link
+          className={styles.login__link}
+          to={`/signup?redirect=${redirect.substring(1)}`}
+        >
           Create account
         </Link>
       </form>

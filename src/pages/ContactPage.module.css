@@ -110,7 +110,8 @@
   flex-direction: column;
 }
 
-#form input, #form textarea {
+#form input,
+#form textarea {
   margin-bottom: 1rem;
   padding: 0.8rem 0.5rem;
   font-size: 1rem;
@@ -168,7 +169,9 @@
   margin-bottom: 0.5rem;
 }
 
-.employee__position, .employee__number, .employee__email {
+.employee__position,
+.employee__number,
+.employee__email {
   color: #606063;
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
@@ -220,7 +223,6 @@
     width: 4rem;
     height: 4rem;
   }
-  
 }
 
 @media (max-width: 425px) {
@@ -231,17 +233,17 @@
   .details__header {
     font-size: 0.9rem;
   }
-  
+
   .details__title {
     font-size: 1.5rem;
     margin: 1.4rem 0;
   }
-  
+
   .details__addres {
     font-size: 1.1rem;
     margin: 1rem 0;
   }
-  
+
   .contact__main li {
     font-size: 1rem;
   }

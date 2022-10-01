@@ -6,12 +6,7 @@ import { getAllProducts } from "../services/getAllProducts";
 // styles
 import styles from "./HomeProducts.module.css";
 
-// image
-import proImage from "../img/products/f1.jpg";
-
 // icons
-import { FaStar } from "react-icons/fa";
-import { BsCart3 } from "react-icons/bs";
 import Product from "./shared/Product";
 
 const HomeProducts = () => {

@@ -23,7 +23,12 @@ const Product = ({ product }) => {
     <div className={styles["container"]}>
       <div className={styles.product}>
         {/* product detail link */}
-        <Link to={`/shop/product/${product._id}`} className={styles['product__detail']} >detail</Link>
+        <Link
+          to={`/shop/product/${product._id}`}
+          className={styles["product__detail"]}
+        >
+          detail
+        </Link>
 
         <div className={styles.pro__image}>
           <img loading="lazy" src={product.image} alt="" />
@@ -47,14 +52,18 @@ const Product = ({ product }) => {
             {!isInCart(state, product._id) ? (
               <button
                 onClick={() =>
-                    dispatch({ type: "ADD_TO_CART", payload: product })
+                  dispatch({ type: "ADD_TO_CART", payload: product })
                 }
                 className={styles["pro__cart"]}
               >
-                <BsCart3 
-                    onClick={() => setFlip(true)}
-                    onAnimationEnd={() => setFlip(false)}
-                    className={flip ? [styles["cart-icon"],styles["flip"]].join(" ") : styles["cart-icon"]}
+                <BsCart3
+                  onClick={() => setFlip(true)}
+                  onAnimationEnd={() => setFlip(false)}
+                  className={
+                    flip
+                      ? [styles["cart-icon"], styles["flip"]].join(" ")
+                      : styles["cart-icon"]
+                  }
                 />
               </button>
             ) : (
@@ -63,13 +72,17 @@ const Product = ({ product }) => {
                   dispatch({ type: "REMOVE__ITEM", payload: product })
                 }
                 className={styles["pro__cart"]}
-                style={{color: "#b91c1c"}}
+                style={{ color: "#b91c1c" }}
               >
                 {/* delete */}
                 <BsTrash
-                    onClick={() => setFlip(true)}
-                    onAnimationEnd={() => setFlip(false)}
-                    className={flip ? [styles["cart-icon"],styles["flip"]].join(" ") : styles["cart-icon"]}
+                  onClick={() => setFlip(true)}
+                  onAnimationEnd={() => setFlip(false)}
+                  className={
+                    flip
+                      ? [styles["cart-icon"], styles["flip"]].join(" ")
+                      : styles["cart-icon"]
+                  }
                 />
               </button>
             )}

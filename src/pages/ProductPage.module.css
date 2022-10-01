@@ -70,34 +70,34 @@
 }
 
 .flip {
-  animation: flip 0.5s cubic-bezier(0.600, 0.040, 0.980, 0.335) alternate-reverse;
+  animation: flip 0.5s cubic-bezier(0.6, 0.04, 0.98, 0.335) alternate-reverse;
 }
 
 /* ======== */
 .collection {
-    margin: 6rem auto 4rem;
+  margin: 6rem auto 4rem;
 }
 
 .collection__title {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .collection__title h2 {
-    font-size: 2rem;
-    color: #323232;
-    margin-bottom: 0.5rem;
+  font-size: 2rem;
+  color: #323232;
+  margin-bottom: 0.5rem;
 }
 
 .collection__title p {
-    color: #64748b;
-    font-weight: 500;
+  color: #64748b;
+  font-weight: 500;
 }
 
 .collection__product {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 @keyframes flip {

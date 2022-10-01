@@ -15,13 +15,13 @@ import { authContext } from "../context/AuthContextProvider";
 
 const CartPage = () => {
   const { state, dispatch } = useContext(cartContext);
-  const {userData} = useContext(authContext)
-
-  console.log(userData);
-
+  const { userData } = useContext(authContext);
+  
+  // when click on checkout scroll to top
+  let condition = !state.selectedItems.length
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [state.checkout, state.selectedItems.length === 0])
+    window.scrollTo(0, 0);
+  }, [state.checkout, condition]);
 
   const renderCart = () => {
     return (
@@ -50,8 +50,10 @@ const CartPage = () => {
               clear
             </button>
             <Link
-              to={userData ? '/cart' : '/login?redirect=cart'}
-              onClick={() => userData._id ? dispatch({ type: "CHECKOUT" }) : null}
+              to={userData ? "/cart" : "/login?redirect=cart"}
+              onClick={() =>
+                userData._id ? dispatch({ type: "CHECKOUT" }) : null
+              }
               className={styles.cart__checkout}
             >
               Checkout

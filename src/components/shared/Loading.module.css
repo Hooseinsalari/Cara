@@ -28,8 +28,8 @@
 }
 
 @media (max-width: 390px) {
-    .loader {
-        width: 13rem;
-        height: 13rem;
-      }
+  .loader {
+    width: 13rem;
+    height: 13rem;
+  }
 }

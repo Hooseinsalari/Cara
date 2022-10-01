@@ -14,7 +14,7 @@ const Cart = ({ item, dispatch }) => {
   return (
     <div className={styles.cart}>
       <div className={styles.cart__detail}>
-        <img className={styles.cart__image} src={item.image} alt="" />
+        <img className={styles.cart__image} src={item.image} alt={item.brand} />
         <div className={styles.cart__text}>
           <span className={styles.cart__brand}>{item.brand}</span>
           <span className={styles.cart__title}>{shorten(item.name)}</span>

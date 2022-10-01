@@ -1,136 +1,138 @@
 .container {
-    min-height: 85vh;
-    overflow-x: hidden;
+  min-height: 85vh;
+  overflow-x: hidden;
 }
 
 .cart {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 2rem 4rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2rem 4rem;
 }
 
 .left {
-    width: 75%;
-    margin-right: 2rem;
+  width: 75%;
+  margin-right: 2rem;
 }
 
 .right {
-    width: 25%;
-    height: 12rem;
-    background-color: #fff;
-    padding: 1rem;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    text-align: left;
-    line-height: 20px;
+  width: 25%;
+  height: 12rem;
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: left;
+  line-height: 20px;
 }
 
 .top {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .top label {
-    font-size: 1rem;
-    color: #323232;
-    font-weight: 600;
-    margin-bottom: 0.7rem;
+  font-size: 1rem;
+  color: #323232;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
 }
 
 .cart__btns {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cart__checkout {
-    width: 70%;
-    border: 1px solid gray;
-    border-radius: 10px;
-    padding: 0.5rem 0;
-    font-size: 0.9rem;
-    font-weight: 500;
-    background-color: #088178;
-    color: #f8fafc;
-    letter-spacing: 0.2px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
+  width: 70%;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: #088178;
+  color: #f8fafc;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
 .cart__clear {
-    width: 30%;
-    margin-right: 0.8rem;
-    border: none;
-    border-radius: 10px;
-    padding: 0.7rem 0;
-    font-size: 1rem;
-    font-weight: 500;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    cursor: pointer;
+  width: 30%;
+  margin-right: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  cursor: pointer;
 }
 
-.checkout , .clear{
-    margin: 5rem auto 0;
+.checkout,
+.clear {
+  margin: 5rem auto 0;
 }
 
 /* queris */
 @media (max-width: 1024px) {
-    .right {
-        height: 10rem;
-    }
+  .right {
+    height: 10rem;
+  }
 }
 
 @media (max-width: 860px) {
-    .left {
-        margin-right: 1.5rem;
-    }
-    .right {
-        padding: 1rem 0.8rem;
-    }
+  .left {
+    margin-right: 1.5rem;
+  }
+  .right {
+    padding: 1rem 0.8rem;
+  }
 
-    .top label {
-        font-size: 0.95rem;
-    }
+  .top label {
+    font-size: 0.95rem;
+  }
 
-    .cart__checkout {
-        padding: 0.5rem 0;
-        font-size: 0.9rem;
-    }
-    
-    .cart__clear {
-        font-size: 0.9rem;
-    }
+  .cart__checkout {
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  .cart__clear {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 768px) {
-    .cart {
-        padding: 2rem;
-        flex-direction: column;
-        align-items: center;
-    }
+  .cart {
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .left {
-        width: 100%;
-        margin-right: 0;
-    }
-    .right {
-        width: 100%;
-    }
+  .left {
+    width: 100%;
+    margin-right: 0;
+  }
+  .right {
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
-    .cart {
-        padding: 2rem 1.5rem;
-    }
+  .cart {
+    padding: 2rem 1.5rem;
+  }
 
-    .right {
-        margin-top: 3rem;
-    }
+  .right {
+    margin-top: 3rem;
+  }
 }

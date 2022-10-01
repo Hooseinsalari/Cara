@@ -1,231 +1,231 @@
 .letter {
-    width: 100%;
-    background: url('../../img/banner/b14.png') #0f172a;
-    background-position: center;
-    padding: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    row-gap: 1.5rem;
+  width: 100%;
+  background: url("../../img/banner/b14.png") #0f172a;
+  background-position: center;
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 1.5rem;
 }
 
 .letter__text {
-    text-align: left;
-    color: #fff;
+  text-align: left;
+  color: #fff;
 }
 
 .letter__text h2 {
-    font-size: 1.8rem;
-    font-weight: 500;
-    margin-bottom: 0.7rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 0.7rem;
 }
 
 .letter__text p {
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.3px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
 }
 
 .letter__input {
-    border-radius: 5px;
-    overflow: hidden;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .letter__input input {
-    padding: 1rem;
-    font-size: 1.2rem;
-    border: none;
-    outline: none;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
 }
 
 .letter__input button {
-    border: none;
-    background-color: #088178;
-    font-size: 1.2rem;
-    padding: 1rem;
-    color: #fff;
-    font-weight: 400;
+  border: none;
+  background-color: #088178;
+  font-size: 1.2rem;
+  padding: 1rem;
+  color: #fff;
+  font-weight: 400;
 }
 
 /* ============================= */
 .main {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 4rem;
-    text-align: left;
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 4rem;
+  text-align: left;
+  gap: 1rem;
 }
 
 .title {
-    color: #323232;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    display: inline-block;
+  color: #323232;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: inline-block;
 }
 
 .contact__item {
-    list-style: none;
-    color: #1f2937;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
+  list-style: none;
+  color: #1f2937;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
 .contact__body {
-    color: #64748b;
-    margin-left: 0.3rem;
+  color: #64748b;
+  margin-left: 0.3rem;
 }
 
 .contact__down {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 .social-link a {
-    color: #334155;
-    text-decoration: none;
-    font-size: 1.5rem;
-    margin-right: 0.7rem;
+  color: #334155;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-right: 0.7rem;
 }
 
 .footer__item {
-    margin-bottom: 0.8rem;
-    list-style: none;
-    color: #64748b;
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    transition: 0.3s;
-    width: fit-content;
+  margin-bottom: 0.8rem;
+  list-style: none;
+  color: #64748b;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+  width: fit-content;
 }
 
 .footer__item::before {
-    content: '';
-    width: 0;
-    height: 3px;
-    background-color: #088178;
-    display: block;
-    border-radius: 20px;
-    transition: 0.3s;
+  content: "";
+  width: 0;
+  height: 3px;
+  background-color: #088178;
+  display: block;
+  border-radius: 20px;
+  transition: 0.3s;
 }
 
 .footer__item:hover {
-    color: #088178;
+  color: #088178;
 }
 
 .footer__item:hover::before {
-    content: '';
-    width: 15px;
-    margin-right: 0.3rem;
+  content: "";
+  width: 15px;
+  margin-right: 0.3rem;
 }
 
 .install__text {
-    color: #64748b;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    display: inline-block;
+  color: #64748b;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: inline-block;
 }
 
 .install__store {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.3rem;
 }
 
 .install__store img {
-    border: 1px solid #088178;
-    border-radius: 5px;
-    overflow: hidden;
-    cursor: pointer;
+  border: 1px solid #088178;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .install__pay {
-    width: 10rem;
+  width: 10rem;
 }
 
 /* queris */
 
 @media (max-width: 916px) {
-    .letter {
-        justify-content: center;
-        flex-direction: column;
-        padding: 3rem 1rem;
-    }   
+  .letter {
+    justify-content: center;
+    flex-direction: column;
+    padding: 3rem 1rem;
+  }
 
-    .letter__text {
-        text-align: center;
-    }
+  .letter__text {
+    text-align: center;
+  }
 
-    /* ------- */
-    .main {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 2rem;
-    }
+  /* ------- */
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+  }
 
-    .install__store {
-        flex-direction: column;
-        width: 10rem;
-    }
+  .install__store {
+    flex-direction: column;
+    width: 10rem;
+  }
 }
 
 @media (max-width: 768px) {
-    .main {
-        padding: 2rem;
-    }
+  .main {
+    padding: 2rem;
+  }
 }
 
 @media (max-width: 500px) {
-    .letter__text h2 {
-        font-size: 1.5rem;
-    }
-    
-    .letter__text p {
-        font-size: 0.9rem;
-    }
+  .letter__text h2 {
+    font-size: 1.5rem;
+  }
 
-    .letter__input input {
-        padding: 0.8rem;
-        font-size: 1rem;
-    }
-    
-    .letter__input button {
-        font-size: 1rem;
-        padding: 0.8rem;
-    }
+  .letter__text p {
+    font-size: 0.9rem;
+  }
 
-    /* ------- */
-    .social-link a {
-        font-size: 1.3rem;
-    }
+  .letter__input input {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
 
-    .contact__item {
-        font-size: 0.9rem;
-    }
-    .title {
-        font-size: 1rem;
-    }
+  .letter__input button {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
 
-    .footer__item {
-        font-size: 0.9rem;
-    }
+  /* ------- */
+  .social-link a {
+    font-size: 1.3rem;
+  }
 
-    .install__text {
-        font-size: 0.9rem;
-    }
+  .contact__item {
+    font-size: 0.9rem;
+  }
+  .title {
+    font-size: 1rem;
+  }
 
-    .install__store {
-        width: 8rem;
-    }
+  .footer__item {
+    font-size: 0.9rem;
+  }
 
-    .install__pay {
-        width: 8rem;
-    }
+  .install__text {
+    font-size: 0.9rem;
+  }
 
-    .footer__item:hover::before {
-        content: '';
-        width: 10px;
-        margin-right: 0.3rem;
-    }
+  .install__store {
+    width: 8rem;
+  }
+
+  .install__pay {
+    width: 8rem;
+  }
+
+  .footer__item:hover::before {
+    content: "";
+    width: 10px;
+    margin-right: 0.3rem;
+  }
 }

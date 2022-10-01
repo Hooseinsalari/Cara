@@ -8,10 +8,12 @@ const initialState = {
 };
 
 const sumItems = (items) => {
-  const itemsCounter = items.reduce((total, item) => total + item.quantity, 0)
-  const total = items.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)
-  return {itemsCounter, total}
-}
+  const itemsCounter = items.reduce((total, item) => total + item.quantity, 0);
+  const total = items
+    .reduce((total, item) => total + item.price * item.quantity, 0)
+    .toFixed(2);
+  return { itemsCounter, total };
+};
 
 const cartReducer = (state, action) => {
   switch (action.type) {
@@ -43,7 +45,7 @@ const cartReducer = (state, action) => {
         ...state,
         selectedItems: [...newSelectedItems],
         ...sumItems(newSelectedItems),
-        checkout: false
+        checkout: false,
       };
 
     case "INCREASE":
@@ -56,7 +58,7 @@ const cartReducer = (state, action) => {
       return {
         ...state,
         checkout: false,
-        ...sumItems(state.selectedItems)
+        ...sumItems(state.selectedItems),
       };
 
     case "DECREASE":
@@ -69,7 +71,7 @@ const cartReducer = (state, action) => {
       return {
         ...state,
         checkout: false,
-        ...sumItems(state.selectedItems)
+        ...sumItems(state.selectedItems),
       };
 
     case "CHECKOUT":
@@ -97,17 +99,19 @@ export const cartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState, () => {
-    const localState = localStorage.getItem("state")
-    return localState ? JSON.parse(localState) : {
-      selectedItems: [],
-      itemsCounter: 0,
-      total: 0,
-      checkout: false,
-    }
+    const localState = localStorage.getItem("state");
+    return localState
+      ? JSON.parse(localState)
+      : {
+          selectedItems: [],
+          itemsCounter: 0,
+          total: 0,
+          checkout: false,
+        };
   });
 
   useEffect(() => {
-    localStorage.setItem('state', JSON.stringify(state))
+    localStorage.setItem("state", JSON.stringify(state));
   }, [state]);
 
   return (

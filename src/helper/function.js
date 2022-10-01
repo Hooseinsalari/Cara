@@ -5,8 +5,8 @@ const isInCart = (state, id) => {
 };
 
 const shorten = (text) => {
-  const len = 20
-  return text.length > len ? text.substring(0, len - 1) + "..." : text
-}
+  const len = 20;
+  return text.length > len ? text.substring(0, len - 1) + "..." : text;
+};
 
 export { isInCart, shorten };

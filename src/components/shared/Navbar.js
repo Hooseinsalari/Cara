@@ -23,8 +23,8 @@ import { FiLogIn, FiMenu } from "react-icons/fi";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const { userData, setUserData } = useContext(authContext);
-  const {state} = useContext(cartContext)
-  
+  const { state } = useContext(cartContext);
+
   const menuHandler = () => {
     setToggle((prevState) => !prevState);
   };
@@ -146,7 +146,11 @@ const Navbar = () => {
           }
         >
           <BsHandbag strokeWidth="0.2" />
-          {state.itemsCounter > 0 ? <span className={styles['cart-alert']}></span> : <span></span>}
+          {state.itemsCounter > 0 ? (
+            <span className={styles["cart-alert"]}></span>
+          ) : (
+            <span></span>
+          )}
         </NavLink>
 
         {/* if userData was true show profile else show login icon */}

@@ -4,9 +4,9 @@ import React, { useEffect, Fragment } from "react";
 import { useLocation } from "react-router-dom";
 
 const ScrollToTop = ({ history, children }) => {
-    const {pathname} = useLocation();
+  const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }, [pathname]);
 
   return <Fragment>{children}</Fragment>;

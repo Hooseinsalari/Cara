@@ -1,6 +1,6 @@
-import React, {useContext, useState} from "react";
+import React, { useContext, useState } from "react";
 
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // context
 import { authContext } from "../context/AuthContextProvider";
@@ -46,13 +46,11 @@ const validationSchema = yup.object({
 
 const SignupPage = () => {
   const [errors, setErrors] = useState("");
-  const {userData, setUserData} = useContext(authContext)
+  const { userData, setUserData } = useContext(authContext);
   let navigate = useNavigate();
-  const query = useQuery()
+  const query = useQuery();
   const redirect = query.get("redirect") ? `/${query.get("redirect")}` : "/";
   const [loading, setLoading] = useState(false);
-
-  console.log(redirect);
 
   const formik = useFormik({
     initialValues: {
@@ -65,29 +63,27 @@ const SignupPage = () => {
     onSubmit: async (values) => {
       const { name, email, password, phoneNumber } = values;
 
-      const userData = {
+      const userInformation = {
         name,
         email,
         password,
-        phoneNumber
+        phoneNumber,
       };
 
       try {
-        setLoading(true)
-        const { data } = await signupUsers(userData);
-        setUserData(data)
-        console.log(data);
-        setErrors("")
-        navigate(redirect)
+        setLoading(true);
+        const { data } = await signupUsers(userInformation);
+        setUserData(data);
+        setErrors("");
+        navigate(redirect);
         if (userData) {
-          setLoading(false)
+          setLoading(false);
         }
       } catch (error) {
-        if(error.response && error.response.data.message) {
-          setErrors(error.response.data.message)
-          setLoading(false)
+        if (error.response && error.response.data.message) {
+          setErrors(error.response.data.message);
+          setLoading(false);
         }
-        console.log(error);
       }
     },
     validationSchema,
@@ -147,12 +143,17 @@ const SignupPage = () => {
             disabled={!formik.isValid}
             className={styles.signup__submit}
           >
-            {
-              loading ? <span className={styles.loader}></span> : <span className={styles['signup__btn-text']}>submit</span>
-            }
+            {loading ? (
+              <span className={styles.loader}></span>
+            ) : (
+              <span className={styles["signup__btn-text"]}>submit</span>
+            )}
           </button>
 
-          <Link className={styles.signup__link} to={`/login?redirect=${redirect.substring(1)}`}>
+          <Link
+            className={styles.signup__link}
+            to={`/login?redirect=${redirect.substring(1)}`}
+          >
             Already have account?
           </Link>
         </form>

@@ -1,7 +1,10 @@
-import "./App.css";
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import "./App.css";
+
+// aos
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // context
 import CartContextProvider from "./context/CartContextProvider";
@@ -21,13 +24,14 @@ import ContactPage from "./pages/ContactPage";
 // components
 import Navbar from "./components/shared/Navbar";
 import Footer from "./components/shared/Footer";
+
+// helper
 import ScrollToTop from "./helper/ScrollToTop";
-import { useEffect } from "react";
 
 function App() {
   useEffect(() => {
-    AOS.init({duration: 1200, once:true})
-}, [])
+    AOS.init({ duration: 1200, once: true });
+  }, []);
 
   return (
     <AuthContextProvider>

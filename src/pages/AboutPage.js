@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import a6 from "../img/about/a6.jpg";
 
 // video
-import appVideo from "../img/about/1.mp4"
+import appVideo from "../img/about/1.mp4";
 
 // styles
 import styles from "./AboutPage.module.css";
@@ -42,7 +42,7 @@ const AboutPage = () => {
         </h1>
 
         <div className={styles.about__video}>
-            <video muted autoPlay loop src={appVideo}></video>
+          <video muted autoPlay loop src={appVideo}></video>
         </div>
       </div>
     </div>

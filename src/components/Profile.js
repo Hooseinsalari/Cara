@@ -22,9 +22,9 @@ const Profile = ({ userData, setUserData }) => {
   };
 
   const logoutHandler = () => {
-    localStorage.removeItem("authState")
-    setUserData(null)
-  }
+    localStorage.removeItem("authState");
+    setUserData(null);
+  };
 
   return (
     <div className={styles.profile}>

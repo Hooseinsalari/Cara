@@ -1,168 +1,166 @@
 .container {
-    margin: 6rem auto 5%;
-    padding: 0 2rem;
+  margin: 6rem auto 5%;
+  padding: 0 2rem;
 }
 
 .title {
-    margin-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .title__head {
-    font-size: 3rem;
-    margin-bottom: 0.3rem;
+  font-size: 3rem;
+  margin-bottom: 0.3rem;
 }
 
 .title__desc {
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
 }
 
 .arrive-products {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .product {
-    background-color: #fff;
-    padding: 0.5rem;
-    width: 17rem;
-    border-radius: 15px;
-    border: 1px solid #cce7d0;
-    transition: 0.3s;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    cursor: pointer;
-    margin: 1rem;
+  background-color: #fff;
+  padding: 0.5rem;
+  width: 17rem;
+  border-radius: 15px;
+  border: 1px solid #cce7d0;
+  transition: 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  cursor: pointer;
+  margin: 1rem;
 }
 
 .product:hover {
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .pro__text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 0.5rem;
 }
 
 .pro__brand {
-    color: #606063;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
+  color: #606063;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
 }
 
 .pro__name {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.6rem;
-    color: #1a1a1a;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: #1a1a1a;
 }
 
 .pro__desc {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .pro__footer-left {
-    text-align: left;
+  text-align: left;
 }
 
-.pro__star svg{
-    color: rgb(243, 181, 25);
-    margin: 0 0.1rem 0.4rem 0;
-    font-size: 0.9rem;
+.pro__star svg {
+  color: rgb(243, 181, 25);
+  margin: 0 0.1rem 0.4rem 0;
+  font-size: 0.9rem;
 }
 
 .pro__count {
-    color: #088178;
-    font-weight: 700;
-    font-size: 1.2rem;
+  color: #088178;
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 .pro__cart {
-    background-color: #e8f6ea;
-    width: 2.7rem;
-    height: 2.7rem;
-    border-radius: 50%;
-    padding: 0.5rem;
-    font-size: 1.5rem;
-    color: #088178;
-    border: 1px solid #cce7d0;
-    cursor: pointer;
-    font-weight: bold;
+  background-color: #e8f6ea;
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  color: #088178;
+  border: 1px solid #cce7d0;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .pro__image {
-    width: 100%;
-    border-radius: 15px;
-    overflow: hidden;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 /* media queris */
 @media (max-width: 768px) {
-    .container {
-        padding: 0 1rem;
-    }
+  .container {
+    padding: 0 1rem;
+  }
 
-    .product {
-        width: 13rem;
-        margin: 0.5rem;
-    }
+  .product {
+    width: 13rem;
+    margin: 0.5rem;
+  }
 
-    .pro__count {
-        font-size: 1.1rem;
-    }
+  .pro__count {
+    font-size: 1.1rem;
+  }
 
-    .pro__cart {
-        width: 2.4rem;
-        height: 2.4rem;
-        font-size: 1.3rem;
-    }
+  .pro__cart {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.3rem;
+  }
 }
 
 @media (max-width: 483px) {
-    .title__head {
-        font-size: 2.5rem;
-        margin-bottom: 0.3rem;
-    }
-    
-    .title__desc {
-        font-size: 1rem;
-        letter-spacing: 0.5px;
-    
-    }
+  .title__head {
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem;
+  }
 
-    .product {
-        width: 11rem;
-        margin: 0.5rem;
-        text-align: left;
-    }
+  .title__desc {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+  }
 
-    .pro__brand {
-        font-size: 0.9;
-    }
+  .product {
+    width: 11rem;
+    margin: 0.5rem;
+    text-align: left;
+  }
 
-    .pro__name {
-        font-size: 1rem;
-    }
+  .pro__brand {
+    font-size: 0.9;
+  }
 
-    
-    .pro__star svg {
-        font-size: 0.8rem;
-    }
+  .pro__name {
+    font-size: 1rem;
+  }
 
-    .pro__count {
-        font-size: 1rem;
-    }
+  .pro__star svg {
+    font-size: 0.8rem;
+  }
 
-    .pro__cart {
-        width: 2.2rem;
-        height: 2.2rem;
-        font-size: 1.1rem;
-    }
+  .pro__count {
+    font-size: 1rem;
+  }
+
+  .pro__cart {
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1.1rem;
+  }
 }

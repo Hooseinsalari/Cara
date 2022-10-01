@@ -3,7 +3,7 @@ import React from "react";
 // styles
 import styles from "./Input.module.css";
 
-const Input = ({label, name, formik, type="text", placeholder}) => {
+const Input = ({ label, name, formik, type = "text", placeholder }) => {
   return (
     <div className={styles.section}>
       <label className={styles.label} htmlFor={name}>
