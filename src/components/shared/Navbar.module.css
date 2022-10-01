@@ -76,6 +76,7 @@
     cursor: pointer;
     color: #1a1a1a;
     transition: 0.3s ease-in-out;
+    position: relative;
 }
 
 .nav__cart-active {
@@ -84,6 +85,18 @@
 
 .nav__cart:hover {
     color: #088178;
+}
+
+.cart-alert {
+    position: absolute;
+    width: 0.7rem;
+    height: 0.7rem;
+    left: -3px;
+    bottom: 1px;
+    border-radius: 50%;
+    background-color: #088178;
+    display: inline-block;
+
 }
 
 .nav__account {

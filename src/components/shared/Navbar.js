@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 
 // context
 import { authContext } from "../../context/AuthContextProvider";
+import { cartContext } from "../../context/CartContextProvider";
 
 // component
 import Profile from "../Profile";
@@ -15,7 +16,6 @@ import styles from "./Navbar.module.css";
 import logo from "../../img/logo.png";
 
 // icons
-import { FaBars } from "react-icons/fa";
 import { BsHandbag } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 import { FiLogIn, FiMenu } from "react-icons/fi";
@@ -23,6 +23,7 @@ import { FiLogIn, FiMenu } from "react-icons/fi";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const { userData, setUserData } = useContext(authContext);
+  const {state} = useContext(cartContext)
   
   const menuHandler = () => {
     setToggle((prevState) => !prevState);
@@ -144,7 +145,8 @@ const Navbar = () => {
               : styles.nav__cart
           }
         >
-          <BsHandbag strokeWidth="0.3" />
+          <BsHandbag strokeWidth="0.2" />
+          {state.itemsCounter > 0 ? <span className={styles['cart-alert']}></span> : <span></span>}
         </NavLink>
 
         {/* if userData was true show profile else show login icon */}
