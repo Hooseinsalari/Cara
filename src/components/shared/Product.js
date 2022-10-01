@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // context
 import { cartContext } from "../../context/CartContextProvider";
@@ -18,8 +18,6 @@ const Product = ({ product }) => {
   const { state, dispatch } = useContext(cartContext);
 
   const [flip, setFlip] = useState(false);
-
-  const navigate = useNavigate()
 
   return (
     <div className={styles["container"]}>
@@ -62,7 +60,6 @@ const Product = ({ product }) => {
             ) : (
               <button
                 onClick={() =>
-                  
                   dispatch({ type: "REMOVE__ITEM", payload: product })
                 }
                 className={styles["pro__cart"]}

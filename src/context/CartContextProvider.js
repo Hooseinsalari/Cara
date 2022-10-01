@@ -17,8 +17,9 @@ const cartReducer = (state, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
       let findItem = state.selectedItems.find(
-        (item) => item === action.payload._id
+        (item) => item._id === action.payload._id
       );
+
       if (!findItem) {
         state.selectedItems.push({
           ...action.payload,

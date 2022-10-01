@@ -5,7 +5,11 @@
     background-size: cover;
     background-position: center;
     text-align: center;
-    padding: 2rem 0.5rem;
+    /* padding: 2rem 0.5rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .call__title {
@@ -33,7 +37,6 @@
     padding: 1rem 1.8rem;
     font-size: 1.2rem;
     font-weight: 500;
-    border-radius: 5px;
     color: #fff;
     transition: 0.3s ease-in-out;
 }
@@ -68,6 +71,6 @@
 
     .call__link {
         padding: 0.8rem 1.2rem;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }

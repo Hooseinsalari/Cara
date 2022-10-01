@@ -31,7 +31,7 @@
   background-color: #088178;
   width: fit-content;
   margin: auto;
-  border-radius: 20px 20px 0 0;
+  border-radius: 18px 18px 0 0;
   box-shadow: rgb(0 0 0 / 20%) 0px 0px 6px 1px;
   padding: 10px 12px 2px;
   font-weight: 400;
@@ -40,7 +40,7 @@
   color: #fff;
   text-decoration: none;
   transition: 0.3s 0.3s ease-in-out;
-  transform: translateY(40px);
+  transform: translateY(20px);
 }
 
 .product:hover .product__detail {

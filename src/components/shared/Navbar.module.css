@@ -139,13 +139,13 @@
 
     .nav__toggle {
         display: block;
-        font-size: 1.5rem;
+        font-size: 1.66rem;
         cursor: pointer;
         margin-top: 4px;
     }
 
     .nav__cart {
-        margin: 0 0.7rem;
+        margin: 0 1rem;
     }
 
     .nav__account {

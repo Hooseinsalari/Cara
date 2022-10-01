@@ -24,6 +24,7 @@
     justify-content: center;
     flex-direction: column;
     text-align: left;
+    color: #000;
 }
 
 .right__box {
@@ -32,33 +33,18 @@
 
 .top__box h3{
     font-size: 1.4rem;
-    color: #363636;
     font-weight: 400;
     margin-bottom: 0.8rem;
 }
 
-.right__box h3 {
-    color: #000;
-}
-
 .top__box h1 {
-    color: #363636;
     font-weight: 600;
     margin-bottom: 0.5rem;
     font-size: 1.7rem;
 }
 
-.right__box h1 {
-    color: #000;
-}
-
 .top__box p {
-    color: #363636;
     font-weight: 500;
-}
-
-.right__box p {
-    color: #000;
 }
 
 .hero__btn {
@@ -87,7 +73,7 @@
     column-gap: 1rem;
 }
 
-.box {
+.first-box , .second-box , .third-box {
     width: 100%;
     height: 35vh;
     padding: 0.5rem;
@@ -109,22 +95,18 @@
     box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 }
 
-.box::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
 .second-box {
     background-image: url('../img/banner/b4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .third-box {
     background-image: url('../img/banner/b18.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .box h2 {

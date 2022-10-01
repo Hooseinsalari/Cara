@@ -23,8 +23,10 @@ const BannerBoxes = () => {
 
             <div className={styles.bottom__boxes}>
                 <div className={[styles['box'],styles['first-box']].join(' ')}>
-                    <h2>SEASONAL SALE</h2>
-                    <p>Winter Collection - 50% Off</p>
+                    <div className={styles.box__text}>
+                        <h2>SEASONAL SALE</h2>
+                        <p>Winter Collection - 50% Off</p>
+                    </div>
                 </div>
 
                 <div className={[styles['box'],styles['second-box']].join(' ')}>

@@ -24,6 +24,7 @@ const ProductPage = () => {
   const [collection, setCollection] = useState([])
   let { id } = useParams();
   const [flip, setFlip] = useState(false);
+  // const [productSize, setProductSize] = useState('')
 
 
   useEffect(() => {

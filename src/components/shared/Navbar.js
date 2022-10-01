@@ -18,7 +18,7 @@ import logo from "../../img/logo.png";
 import { FaBars } from "react-icons/fa";
 import { BsHandbag } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
-import { FiLogIn } from "react-icons/fi";
+import { FiLogIn, FiMenu } from "react-icons/fi";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -42,7 +42,7 @@ const Navbar = () => {
         }
       >
         <div onClick={menuHandler} className={styles.nav__toggle}>
-          <FaBars />
+          <FiMenu strokeWidth="2" />
         </div>
 
         <div
@@ -144,7 +144,7 @@ const Navbar = () => {
               : styles.nav__cart
           }
         >
-          <BsHandbag />
+          <BsHandbag strokeWidth="0.3" />
         </NavLink>
 
         {/* if userData was true show profile else show login icon */}
