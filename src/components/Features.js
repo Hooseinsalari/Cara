@@ -13,7 +13,7 @@ import f6 from "../img/features/f6.png"
 
 const Features = () => {
     return (
-        <div className={styles.feat}>
+        <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" className={styles.feat}>
             <div className={styles.feat__item}>
                 <img src={f1} alt="features image" />
                 <span style={{color: '#074A51', background: '#dbf4f6'}}>Free Shipping</span>

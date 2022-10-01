@@ -13,7 +13,7 @@ import styles from "./Blog.module.css";
 const Blog = () => {
   return (
     <div className={styles.blog}>
-      <div className={styles.blog__header}>
+      <div className={styles.blog__header} data-aos="fade-down">
         <h1 className={styles.blog__title}>#Readmore</h1>
         <p className={styles.blog__subtitle}>
           Read all case studies about our product
@@ -21,7 +21,7 @@ const Blog = () => {
       </div>
 
       <div className={styles.blog__items}>
-        <div className={styles.blog__box}>
+        <div className={styles.blog__box} data-aos="fade-up">
             <div className={styles.blog__img}>
                 <img src={b1} alt="banner" />
             </div>
@@ -38,7 +38,7 @@ const Blog = () => {
             <h1 className={styles.blog__date}>12/01</h1>
         </div>
 
-        <div className={styles.blog__box}>
+        <div className={styles.blog__box} data-aos="fade-up">
             <div className={styles.blog__img}>
                 <img src={b2} alt="banner" />
             </div>
@@ -55,7 +55,7 @@ const Blog = () => {
             <h1 className={styles.blog__date}>18/01</h1>
         </div>
 
-        <div className={styles.blog__box}>
+        <div className={styles.blog__box} data-aos="fade-up">
             <div className={styles.blog__img}>
                 <img src={b3} alt="banner" />
             </div>
@@ -72,7 +72,7 @@ const Blog = () => {
             <h1 className={styles.blog__date}>14/01</h1>
         </div>
 
-        <div className={styles.blog__box}>
+        <div className={styles.blog__box} data-aos="fade-up">
             <div className={styles.blog__img}>
                 <img src={b4} alt="banner" />
             </div>

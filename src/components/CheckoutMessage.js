@@ -9,7 +9,7 @@ import styles from "./CheckoutMessage.module.css";
 
 const CheckoutMessage = () => {
   return (
-    <div className={styles.checkout}>
+    <div className={styles.checkout} data-aos="zoom-in-up" data-aos-duration="800">
       <FcOk className={styles.checkout__success} />
       <h2 className={styles.checkout__title}>Thank You!</h2>
       <p className={styles.checkout__message}>

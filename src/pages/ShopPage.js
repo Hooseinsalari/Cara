@@ -24,14 +24,14 @@ const ShopPage = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.shop__header}>
+      <div className={styles.shop__header} data-aos="fade-down">
         <h1 className={styles.shop__title}>#StayHome</h1>
         <p className={styles.shop__subtitle}>
           save more with coupons and up to 70% off!
         </p>
       </div>
 
-      <div className={styles.shop__product}>
+      <div className={styles.shop__product} data-aos="fade-up">
         {products.length ? (
           products.map((product) => (
             <Product key={product._id} product={product} />

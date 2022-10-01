@@ -27,7 +27,7 @@ const HomeProducts = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-aos="fade-up">
       <div className={styles.title}>
         <h1 className={styles["title__head"]}>New Arrivals</h1>
         <p className={styles["title__desc"]}>

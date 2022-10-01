@@ -26,13 +26,13 @@ const CartPage = () => {
   const renderCart = () => {
     return (
       <div className={styles.cart}>
-        <div className={styles.left}>
+        <div className={styles.left} data-aos="fade-right">
           {state.selectedItems.map((item) => (
             <Cart key={item._id} item={item} dispatch={dispatch} />
           ))}
         </div>
 
-        <div className={styles.right}>
+        <div className={styles.right} data-aos="fade-left">
           <div className={styles.top}>
             <label>
               Total Items: <span>{state.itemsCounter}</span>

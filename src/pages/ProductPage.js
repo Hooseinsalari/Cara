@@ -21,48 +21,47 @@ import styles from "./ProductPage.module.css";
 const ProductPage = () => {
   const { state, dispatch } = useContext(cartContext);
   const [product, setProduct] = useState(null);
-  const [collection, setCollection] = useState([])
+  const [collection, setCollection] = useState([]);
   let { id } = useParams();
   const [flip, setFlip] = useState(false);
   // const [productSize, setProductSize] = useState('')
 
-
   useEffect(() => {
-    setProduct(null)
+    setProduct(null);
 
     const fetchData = async () => {
       const { data } = await getOneProduct(id);
-      setProduct(data)
+      setProduct(data);
     };
-    
+
     fetchData();
   }, [id]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await getAllProducts()
-      let slicedData = data.slice(3, 7)
-      setCollection(slicedData)
-    }
+      const { data } = await getAllProducts();
+      let slicedData = data.slice(3, 7);
+      setCollection(slicedData);
+    };
 
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
 
   const addToCartHandler = () => {
-    dispatch({ type: "REMOVE__ITEM", payload: product })
-    setFlip(true)
-  }
+    dispatch({ type: "REMOVE__ITEM", payload: product });
+    setFlip(true);
+  };
 
   const inCartHandler = () => {
-    dispatch({ type: "ADD_TO_CART", payload: product })
-    setFlip(true)
-  }
+    dispatch({ type: "ADD_TO_CART", payload: product });
+    setFlip(true);
+  };
 
   return (
     <div className={styles.container}>
-      { product ? (
+      {product ? (
         <div className={styles.main}>
-          <div className={styles.product}>
+          <div className={styles.product} data-aos="fade-up">
             <div className={styles.product__image}>
               <img src={product.image} alt={product.name} />
             </div>
@@ -72,7 +71,11 @@ const ProductPage = () => {
               <h1 className={styles.product__name}>{product.name}</h1>
               {isInCart(state, product._id) ? (
                 <button
-                  className={flip ? [styles["product__add"],styles["flip"]].join(" ") : styles["product__add"]}
+                  className={
+                    flip
+                      ? [styles["product__add"], styles["flip"]].join(" ")
+                      : styles["product__add"]
+                  }
                   onClick={addToCartHandler}
                   onAnimationEnd={() => setFlip(false)}
                 >
@@ -80,7 +83,11 @@ const ProductPage = () => {
                 </button>
               ) : (
                 <button
-                  className={flip ? [styles["product__add"],styles["flip"]].join(" ") : styles["product__add"]}
+                  className={
+                    flip
+                      ? [styles["product__add"], styles["flip"]].join(" ")
+                      : styles["product__add"]
+                  }
                   onClick={inCartHandler}
                   onAnimationEnd={() => setFlip(false)}
                 >
@@ -94,21 +101,18 @@ const ProductPage = () => {
             </div>
           </div>
 
-          <div className={styles.collection}>
+          <div className={styles.collection} data-aos="fade-up">
+            <div className={styles.collection__title}>
+              <h2>Featured Products</h2>
+              <p>Summer Collection New Modern Design</p>
+            </div>
 
-                <div className={styles.collection__title}>
-                  <h2>Featured Products</h2>
-                  <p>Summer Collection New Modern Design</p>
-                </div>
-               
-                <div className={styles.collection__product}>
-                  {collection.map((product) => (
-                    <Product key={product._id} product={product} />
-                  ))}
-                </div>
-                
+            <div className={styles.collection__product}>
+              {collection.map((product) => (
+                <Product key={product._id} product={product} />
+              ))}
+            </div>
           </div>
-
         </div>
       ) : (
         <>

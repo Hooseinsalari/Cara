@@ -13,7 +13,7 @@ import styles from "./Footer.module.css";
 
 const Footer = () => {
     return (
-        <div className={styles.footer}>
+        <div className={styles.footer} data-aos="fade-up">
             <div className={styles.letter}>
                 <div className={styles.letter__text}>
                     <h2>Sign Up For Newsletters</h2>

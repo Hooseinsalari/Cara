@@ -13,12 +13,12 @@ import styles from "./AboutPage.module.css";
 const AboutPage = () => {
   return (
     <div>
-      <div className={styles.about__header}>
+      <div className={styles.about__header} data-aos="fade-down">
         <h1 className={styles.about__title}>#AboutUs</h1>
         <p className={styles.about__subtitle}>Get to know us and shop safely</p>
       </div>
 
-      <div className={styles.about__head}>
+      <div className={styles.about__head} data-aos="fade-up">
         <div className={styles.about__image}>
           <img src={a6} alt="banner" />
         </div>
@@ -36,7 +36,7 @@ const AboutPage = () => {
         </div>
       </div>
 
-      <div className={styles.about__app}>
+      <div className={styles.about__app} data-aos="fade-up">
         <h1>
           Download Our <Link to="/about">App</Link>
         </h1>

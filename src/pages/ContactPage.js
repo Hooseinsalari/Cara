@@ -14,14 +14,14 @@ import styles from "./ContactPage.module.css";
 const ContactPage = () => {
   return (
     <div>
-      <div className={styles.contact__header}>
+      <div className={styles.contact__header} data-aos="fade-down">
         <h1 className={styles.contact__title}>#Let's_to_talk</h1>
         <p className={styles.contact__subtitle}>
           Leave a message, I love to hear from You!
         </p>
       </div>
 
-      <div className={styles.contact__main}>
+      <div className={styles.contact__main} data-aos="fade-up">
         <div className={styles.contact__details}>
           <h4 className={styles.details__header}>GET IN TOUCH</h4>
           <h1 className={styles.details__title}>
@@ -58,7 +58,7 @@ const ContactPage = () => {
         </div>
       </div>
 
-      <div className={styles.comment}>
+      <div className={styles.comment} data-aos="fade-up">
         <div className={styles.comment__form}>
           <h4>LEAVE A MESSAGE</h4>
           <h2>I love to hear from you</h2>

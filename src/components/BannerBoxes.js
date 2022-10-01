@@ -6,7 +6,7 @@ import styles from "./BannerBoxes.module.css";
 const BannerBoxes = () => {
     return (
         <div className={styles.boxes}>
-            <div className={styles.top__boxes}>
+            <div className={styles.top__boxes} data-aos="fade-up">
                 <div className={[styles['left__box'],styles['top__box']].join(' ')}>
                     <h3>crazy deals</h3>
                     <h1>buy 1 get 1 free</h1>
@@ -21,7 +21,7 @@ const BannerBoxes = () => {
                 </div>
             </div>
 
-            <div className={styles.bottom__boxes}>
+            <div className={styles.bottom__boxes} data-aos="fade-up">
                 <div className={[styles['box'],styles['first-box']].join(' ')}>
                     <div className={styles.box__text}>
                         <h2>SEASONAL SALE</h2>
