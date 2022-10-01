@@ -1,0 +1,49 @@
+.clear {
+    border-radius: 15px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    width: 25rem;
+    margin: auto;
+    padding: 2rem 1.5rem;
+    position: relative;
+}
+
+.clear__icon {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    font-size: 4rem;
+}
+
+.clear__title {
+    margin-top: 1.3rem;
+    margin-bottom: 1rem;
+    color: #323232;
+}
+
+.clear__message {
+    font-size: 1.1rem;
+    line-height: 23px;
+    font-weight: 600;
+}
+
+.clear__message a {
+    text-decoration: none;
+    color: #088178;
+}
+
+/* responsive */
+@media (max-width: 425px) {
+    .clear {
+        width: 18rem;
+    }
+
+    .clear__title {
+        font-size: 1.4rem;
+    }
+
+    .clear__message {
+        font-size: 1rem;
+    }
+}

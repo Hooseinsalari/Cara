@@ -76,20 +76,7 @@
 }
 
 .checkout , .clear{
-    margin: 5rem auto;
-    padding: 0 0.5rem;
-}
-
-.checkout h1 , .clear h1{
-    color: #323232;
-}
-
-.checkout a , .clear a {
-    font-size: 1.4rem;
-    color: #088178;
-    text-decoration: none;
-    margin-top: 0.5rem;
-    display: inline-block;
+    margin: 5rem auto 0;
 }
 
 /* queris */

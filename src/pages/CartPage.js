@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // styles
@@ -6,6 +6,8 @@ import styles from "./CartPage.module.css";
 
 // component
 import Cart from "../components/shared/Cart";
+import CheckoutMessage from "../components/CheckoutMessage";
+import ClearMessage from "../components/ClearMessage";
 
 // context
 import { cartContext } from "../context/CartContextProvider";
@@ -16,6 +18,10 @@ const CartPage = () => {
   const {userData} = useContext(authContext)
 
   console.log(userData);
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [state.checkout, state.selectedItems.length === 0])
 
   const renderCart = () => {
     return (
@@ -62,13 +68,11 @@ const CartPage = () => {
         renderCart()
       ) : state.checkout ? (
         <div className={styles.checkout}>
-          <h1>Checkout successfully</h1>
-          <Link to="/">Home Page</Link>
+          <CheckoutMessage />
         </div>
       ) : (
         <div className={styles.clear}>
-          <h1>Your Cart Is Empty</h1>
-          <Link to="/shop">Let's add</Link>
+          <ClearMessage />
         </div>
       )}
     </div>
