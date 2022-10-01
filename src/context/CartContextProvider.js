@@ -96,10 +96,18 @@ const cartReducer = (state, action) => {
 export const cartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(cartReducer, initialState);
+  const [state, dispatch] = useReducer(cartReducer, initialState, () => {
+    const localState = localStorage.getItem("state")
+    return localState ? JSON.parse(localState) : {
+      selectedItems: [],
+      itemsCounter: 0,
+      total: 0,
+      checkout: false,
+    }
+  });
 
   useEffect(() => {
-    console.log(state);
+    localStorage.setItem('state', JSON.stringify(state))
   }, [state]);
 
   return (
