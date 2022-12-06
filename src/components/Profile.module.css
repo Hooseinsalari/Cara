@@ -3,6 +3,8 @@
   font-size: 1.5rem;
   transition: 0.3s ease-in-out;
   cursor: pointer;
+  border: none;
+  background: transparent;
 }
 
 .profile__icon-active {

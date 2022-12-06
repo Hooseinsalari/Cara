@@ -31,7 +31,7 @@ const Product = ({ product }) => {
         </Link>
 
         <div className={styles.pro__image}>
-          <img loading="lazy" src={product.image} alt="" />
+          <img loading="lazy" src={product.image} alt={product.brand} />
         </div>
         <div className={styles.pro__text}>
           <span className={styles.pro__brand}>{product.brand}</span>

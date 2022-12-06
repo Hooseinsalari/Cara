@@ -59,8 +59,8 @@ const ProductPage = () => {
   return (
     <div className={styles.container}>
       {product ? (
-        <div className={styles.main}>
-          <div className={styles.product} data-aos="fade-up">
+        <div className={styles.main} data-aos="fade-up">
+          <div className={styles.product}>
             <div className={styles.product__image}>
               <img src={product.image} alt={product.name} />
             </div>
@@ -100,7 +100,7 @@ const ProductPage = () => {
             </div>
           </div>
 
-          <div className={styles.collection} data-aos="fade-up">
+          <div className={styles.collection}>
             <div className={styles.collection__title}>
               <h2>Featured Products</h2>
               <p>Summer Collection New Modern Design</p>

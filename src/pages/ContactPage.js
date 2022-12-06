@@ -51,9 +51,10 @@ const ContactPage = () => {
             width="600"
             height="400"
             style={{ border: "0" }}
-            allowFullScreen=""
             referrerPolicy="no-referrer-when-downgrade"
             title="map"
+            loading="lazy"
+            alt="map"
           ></iframe>
         </div>
       </div>

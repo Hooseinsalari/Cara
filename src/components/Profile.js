@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 // icons
 import {
@@ -15,10 +15,24 @@ import { FaRegUserCircle } from "react-icons/fa";
 import styles from "./Profile.module.css";
 
 const Profile = ({ userData, setUserData }) => {
-  const [profile, setProfile] = useState(false);
+  const [isShow, setIsShow] = useState(false);
+  const btnRef = useRef();
 
-  const profileHandler = () => {
-    setProfile((prevState) => !prevState);
+  useEffect(() => {
+    const closeProfile = (e) => {
+      if (e.path[0] !== btnRef.current) {
+        setIsShow(false);
+      }
+    };
+
+    document.body.addEventListener("click", closeProfile);
+
+    return () => document.body.removeEventListener("click", closeProfile);
+  }, []);
+
+  const profileHandler = (event) => {
+    event.stopPropagation();
+    setIsShow((prevState) => !prevState);
   };
 
   const logoutHandler = () => {
@@ -28,10 +42,11 @@ const Profile = ({ userData, setUserData }) => {
 
   return (
     <div className={styles.profile}>
-      <div
+      <button
+        ref={btnRef}
         onClick={profileHandler}
         className={
-          profile
+          isShow
             ? [styles["profile__icon"], styles["profile__icon-active"]].join(
                 " "
               )
@@ -39,11 +54,11 @@ const Profile = ({ userData, setUserData }) => {
         }
       >
         <FiUser />
-      </div>
+      </button>
 
       <div
         className={
-          profile
+          isShow
             ? [styles["profile__menu"], styles["profile__menu-active"]].join(
                 " "
               )
