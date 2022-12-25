@@ -127,6 +127,7 @@
 
 .pro__image img {
   height: 15rem;
+  width: 100%;
 }
 
 @keyframes flip {

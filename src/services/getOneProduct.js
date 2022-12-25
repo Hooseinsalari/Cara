@@ -1,5 +1,5 @@
 import http from "./httpService";
 
 export const getOneProduct = (id) => {
-  return http.get(`http://localhost:5000/api/product/${id}`);
+  return http.get(`https://cara-back-end.onrender.com/api/product/${id}`);
 };
