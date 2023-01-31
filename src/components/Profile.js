@@ -20,7 +20,7 @@ const Profile = ({ userData, setUserData }) => {
 
   useEffect(() => {
     const closeProfile = (e) => {
-      if (e.path[0] !== btnRef.current) {
+      if (e.composedPath()[0] !== btnRef.current) {
         setIsShow(false);
       }
     };
