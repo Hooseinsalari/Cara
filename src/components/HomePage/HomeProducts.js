@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 // service
-import { getAllProducts } from "../services/getAllProducts";
+import { getAllProducts } from "../../services/getAllProducts";
 
 // styles
 import styles from "./HomeProducts.module.css";
 
 // icons
-import Product from "./shared/Product";
+import Product from "../shared/Product";
 
 const HomeProducts = () => {
   const [newProducts, setNewProducts] = useState([]);

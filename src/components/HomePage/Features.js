@@ -4,12 +4,12 @@ import React from "react";
 import styles from "./Features.module.css";
 
 // images
-import f1 from "../img/features/f1.png";
-import f2 from "../img/features/f2.png";
-import f3 from "../img/features/f3.png";
-import f4 from "../img/features/f4.png";
-import f5 from "../img/features/f5.png";
-import f6 from "../img/features/f6.png";
+import f1 from "../../img/features/f1.png";
+import f2 from "../../img/features/f2.png";
+import f3 from "../../img/features/f3.png";
+import f4 from "../../img/features/f4.png";
+import f5 from "../../img/features/f5.png";
+import f6 from "../../img/features/f6.png";
 
 const Features = () => {
   return (
