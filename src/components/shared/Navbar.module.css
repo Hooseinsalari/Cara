@@ -4,11 +4,15 @@
   justify-content: space-between;
   padding: 0.9rem 4rem;
   background-color: #e3e6f3;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   z-index: 1000;
   position: sticky;
   top: 0;
   left: 0;
+  transition: 0.3s;
+}
+
+.nav-active {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .nav__right {

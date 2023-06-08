@@ -6,7 +6,7 @@ import { getAllProducts } from "../../services/getAllProducts";
 // styles
 import styles from "./HomeProducts.module.css";
 
-// icons
+// components
 import Product from "../shared/Product";
 import Loading from "../shared/Loading";
 

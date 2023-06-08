@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import { NavLink } from "react-router-dom";
 
@@ -22,6 +22,7 @@ import { FiLogIn, FiMenu } from "react-icons/fi";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [scroll, setScroll] = useState(false);
   const { userData, setUserData } = useContext(authContext);
   const { state } = useContext(cartContext);
 
@@ -29,8 +30,18 @@ const Navbar = () => {
     setToggle((prevState) => !prevState);
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 30);
+    });
+  }, []);
+
   return (
-    <nav className={styles.nav}>
+    <nav
+      className={
+        scroll ? [styles["nav"], styles["nav-active"]].join(" ") : styles.nav
+      }
+    >
       <NavLink to="/" className={styles.nav__logo}>
         <img src={logo} alt="logo" />
       </NavLink>
