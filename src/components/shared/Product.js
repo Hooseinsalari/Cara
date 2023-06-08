@@ -14,6 +14,9 @@ import { BsCart3, BsTrash } from "react-icons/bs";
 // functions
 import { isInCart, shorten } from "../../helper/function";
 
+// lazy loading
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 const Product = ({ product }) => {
   const { state, dispatch } = useContext(cartContext);
 
@@ -31,7 +34,13 @@ const Product = ({ product }) => {
         </Link>
 
         <div className={styles.pro__image}>
-          <img loading="lazy" src={product.image} alt={product.brand} />
+          <LazyLoadImage
+            src={product.image}
+            alt={product.brand}
+            width={240}
+            height={240}
+            effect="blur"
+          />
         </div>
         <div className={styles.pro__text}>
           <span className={styles.pro__brand}>{product.brand}</span>

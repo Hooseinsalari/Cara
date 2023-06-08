@@ -9,6 +9,7 @@ import appVideo from "../img/about/1.mp4";
 
 // styles
 import styles from "./AboutPage.module.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const AboutPage = () => {
   return (
@@ -20,7 +21,7 @@ const AboutPage = () => {
 
       <div className={styles.about__head} data-aos="fade-up">
         <div className={styles.about__image}>
-          <img src={a6} alt="banner" />
+          <LazyLoadImage src={a6} effect="black-and-white" />
         </div>
 
         <div className={styles.about__text}>

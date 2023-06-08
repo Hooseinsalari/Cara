@@ -71,6 +71,19 @@
 .contact__map {
   width: 55%;
   height: 400px;
+  position: relative;
+}
+
+.contact__map::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  z-index: -1;
 }
 
 .contact__map iframe {
