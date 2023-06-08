@@ -8,6 +8,7 @@ import styles from "./HomeProducts.module.css";
 
 // icons
 import Product from "../shared/Product";
+import Loading from "../shared/Loading";
 
 const HomeProducts = () => {
   const [newProducts, setNewProducts] = useState([]);
@@ -31,9 +32,13 @@ const HomeProducts = () => {
       </div>
 
       <div className={styles["arrive-products"]}>
-        {newProducts.slice(1, 5).map((product) => (
-          <Product key={product._id} product={product} />
-        ))}
+        {newProducts.length ? (
+          newProducts
+            .slice(1, 5)
+            .map((product) => <Product key={product._id} product={product} />)
+        ) : (
+          <Loading />
+        )}
       </div>
     </div>
   );
