@@ -16,7 +16,7 @@
   height: 50vh;
   background-image: url("../../img/banner/b17.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center right 20%;
   background-repeat: no-repeat;
   padding: 2rem;
   display: flex;
