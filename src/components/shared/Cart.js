@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // function
 import { shorten } from "../../helper/function";
@@ -9,10 +10,15 @@ import styles from "./Cart.module.css";
 // icons
 import { BiPlus, BiMinus } from "react-icons/bi";
 import { BsTrash } from "react-icons/bs";
+import { RiInformationLine } from "react-icons/ri";
 
 const Cart = ({ item, dispatch }) => {
   return (
     <div className={styles.cart}>
+      <Link className={styles["cart__data-link"]} to={`/shop/product/${item._id}`}>
+        <RiInformationLine />
+      </Link>
+
       <div className={styles.cart__detail}>
         <img className={styles.cart__image} src={item.image} alt={item.brand} />
         <div className={styles.cart__text}>
