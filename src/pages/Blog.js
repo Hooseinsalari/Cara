@@ -22,8 +22,8 @@ const Blog = () => {
 
       <div className={styles.blog__items}>
         <div className={styles.blog__box} data-aos="fade-up">
-          <div className={styles.blog__img}>
-            <img src={b1} alt="banner" />
+          <div className={styles.blog__img} id={styles["first-box"]}>
+            {/* <img src={b1} alt="banner" /> */}
           </div>
 
           <div className={styles.blog__details}>
@@ -39,8 +39,8 @@ const Blog = () => {
         </div>
 
         <div className={styles.blog__box} data-aos="fade-up">
-          <div className={styles.blog__img}>
-            <img src={b2} alt="banner" />
+          <div className={styles.blog__img} id={styles["second-box"]}>
+            {/* <img src={b2} alt="banner" /> */}
           </div>
 
           <div className={styles.blog__details}>
@@ -56,8 +56,8 @@ const Blog = () => {
         </div>
 
         <div className={styles.blog__box} data-aos="fade-up">
-          <div className={styles.blog__img}>
-            <img src={b3} alt="banner" />
+          <div className={styles.blog__img} id={styles["third-box"]}>
+            {/* <img src={b3} alt="banner" /> */}
           </div>
 
           <div className={styles.blog__details}>
@@ -73,8 +73,8 @@ const Blog = () => {
         </div>
 
         <div className={styles.blog__box} data-aos="fade-up">
-          <div className={styles.blog__img}>
-            <img src={b4} alt="banner" />
+          <div className={styles.blog__img} id={styles["fourth-box"]}>
+            {/* <img src={b4} alt="banner" /> */}
           </div>
 
           <div className={styles.blog__details}>
