@@ -10,6 +10,7 @@ const Input = ({ label, name, formik, type = "text", placeholder }) => {
         {label}
       </label>
       <input
+      autoComplete="off"
         className={
           formik.errors[name] && formik.touched[name]
             ? [styles["input"], styles["input-error"]].join(" ")

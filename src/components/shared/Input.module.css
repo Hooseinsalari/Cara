@@ -3,25 +3,27 @@
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  margin: 3.3rem auto;
+  margin: 3.5rem auto;
   position: relative;
 }
 
 .label {
   font-size: 1.1rem;
   font-weight: 500;
-  margin-left: 0.8rem;
+  margin-left: 0.1rem;
+  margin-bottom: 0.6rem;
 }
 
 .input {
   padding: 1rem 0.8rem;
   font-size: 1.1rem;
   width: 100%;
-  border-radius: 10px;
-  border: 1px solid #075985;
+  border-radius: 5px;
+  border: none;
   outline: none;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   transition: 0.2s;
+  background-color: transparent;
 }
 
 .input-error {
@@ -29,15 +31,15 @@
 }
 
 .input:focus {
-  background-color: #f0fdf4;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .error {
   position: absolute;
-  bottom: -28px;
-  left: 12px;
+  bottom: -31px;
+  left: -1px;
   color: #dc2626;
-  background-color: #fecaca;
   padding: 5px;
   font-size: 0.9rem;
   font-weight: 600;
